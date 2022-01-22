@@ -1,0 +1,16 @@
+<form class="container">
+  <h2>Add a blog</h2>
+  include(
+    "../input/input.eta", 
+    { type: text, name: title, label: "Enter a title" }
+  )
+  include(
+    "../input/input.eta", 
+    { type: date, name: date, label: "Enter a date" }
+  )
+  include(
+    "../input/input.eta", 
+    { type: text, name: readtime, label: "Enter an estimation of reaad time" }
+  )
+  <button></button>
+</form

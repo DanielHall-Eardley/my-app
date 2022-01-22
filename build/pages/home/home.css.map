@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../pages/home/components/header/header.css"],
+  "sourcesContent": [".header_container_58252e48-cedf-488e-903f-d3b1f4acc197 \n{\n  display: flex;\n  align-items: center;\n  padding: var(--4sp);\n}\n\n.btnLink_noScoped\n{\n  background-color: transparent;\n  color: var(--secondary-clr);\n  border: none;\n  outline: var(--primary-clr);\n}\n\n .header_name_9b56c347-fa8a-459c-acb2-909a7898c077 \n{\n  flex: 1;\n}\n\n"],
+  "mappings": "AAAA,uDAEE,aACA,mBACA,mBAGF,kBAEE,6BACA,2BACA,YACA,2BAGD,kDAEC",
+  "names": []
+}

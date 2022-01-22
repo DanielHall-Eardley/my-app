@@ -1,0 +1,10 @@
+<div class="container">
+  <label for="{{`${it.name}_${it.type}`}}" >
+    {{= it.label}}
+  </label>
+  <input 
+    type="{{= it.type }}" 
+    id="{{`${it.name}_${it.type}`}}" 
+    name="{{ it.name }}"
+  />
+</div>
