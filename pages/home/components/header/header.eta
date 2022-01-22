@@ -9,12 +9,6 @@
     data-name="downloadResume"
     id="34be11ac-95fb-4c9b-a4e0-a0a0c26be29b"
   >
-    Download Resume
-    </button>
-  <a
-    class="btnLink_noScoped"
-    href="/create/content"
-  >
-    Add Content
-  </a>
+    Download Resume</button
+  ><a class="btnLink_noScoped" href="/create/content"> Add Content </a>
 </header>

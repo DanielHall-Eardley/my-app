@@ -12,5 +12,12 @@ exports.getHomePage = catchAsyncError(async (req, res, next) => {
 })
 
 exports.getAddContentPage = catchAsyncError(async (req, res, next) => {
-  res.render('addContent/addContent.eta');
+  const data = {
+    pageInfo: {
+      title: 'Add Content',
+      pageName: 'addContent'
+    }
+  }
+  
+  res.render('addContent/addContent.eta', data);
 })

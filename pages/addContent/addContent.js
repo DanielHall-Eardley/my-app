@@ -1,4 +1,10 @@
-
+import input_form from './components/form/input.js' 
+import submit_form from './components/form/submit.js' 
+ 
+ const interactions = [
+    input_form,submit_form
+  ] 
+ 
 function attachEventListeners (interactions=[]) {
   let interactionArray = []
   

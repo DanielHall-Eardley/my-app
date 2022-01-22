@@ -1,1 +1,4 @@
-<main></main>
+{{ layout("../../layouts/default.eta", it.pageInfo) }}
+<main>
+  {{~ includeFile("./components/form/form.eta") }}
+</main>
