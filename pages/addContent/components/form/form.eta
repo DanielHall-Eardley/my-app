@@ -1,25 +1,27 @@
 <form
-  class="form_container_bf8b6b03-790f-4cb3-87a9-994cf2fb6930"
-  action="add/content/blog"
-  method="post"
-  enctype="multipart/form-data"
+	class="form_container_bf8b6b03-790f-4cb3-87a9-994cf2fb6930"
+	action="add/content/blog"
+	method="post"
+	enctype="multipart/form-data"
 >
-  <h3 class="form_title_39f1ab51-8125-4f95-bc57-171991f1b31f">Add a blog</h3>
-  <div class="inputContainer_noScoped">
-    <label for="blogTitle"> Enter a title </label
-    ><input id="blogTitle" name="title" type="text" />
-  </div>
-  <div class="inputContainer_noScoped">
-    <label for="blogDate">Enter a title</label
-    ><input id="blogDate" name="date" type="date" />
-  </div>
-  <div class="inputContainer_noScoped">
-    <label for="blogReadTime">Enter a title</label
-    ><input id="blogReadTime" name="readTime" type="number" />
-  </div>
-  <div class="inputContainer_noScoped">
-    <label for="blogFile">Enter a title</label
-    ><input id="blogFile" name="blog" type="file" />
-  </div>
-  <button>Submit</button>
+	<h2 class="form_title_39f1ab51-8125-4f95-bc57-171991f1b31f">
+		Add a blog
+	</h2>
+	<div class="inputContainer_noScoped">
+		<label for="blogTitle">Enter a title</label>
+		<input id="blogTitle" name="title" type="text" />
+	</div>
+	<div class="inputContainer_noScoped">
+		<label for="blogDate">Enter the date</label>
+		<input id="blogDate" name="date" type="date" />
+	</div>
+	<div class="inputContainer_noScoped">
+		<label for="blogReadTime">Enter a read time</label>
+		<input id="blogReadTime" name="readTime" type="number" />
+	</div>
+	<div class="inputContainer_noScoped">
+		<label for="blogFile">Upload the file</label>
+		<input id="blogFile" name="blog" type="file" />
+	</div>
+	<button>Submit</button>
 </form>

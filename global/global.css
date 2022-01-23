@@ -80,16 +80,24 @@ label
   padding: var(--1sp) 0;
 }
 
-input {
+input 
+{
   border-radius: var(--rad-sm);
   height: var(--4sp);
   width: 30rem;
+  border: solid 1px var(--primary-clr);
 }
 
-button {
+button 
+{
   background-color: var(--primary-clr);
   color: var(--secondary-clr);
   padding: var(--1sp) var(--2sp);
   border-radius: var(--rad-sm);
   border: none;
+}
+
+ul 
+{
+  list-style: none;
 }

@@ -1,4 +1,5 @@
 {{ layout("../../layouts/default.eta", it.pageInfo) }}
 <main>
+  {{~ includeFile("./components/addContentHeader/addContentHeader.eta") }}
   {{~ includeFile("./components/form/form.eta") }}
 </main>

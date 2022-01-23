@@ -1,25 +1,41 @@
+import input_addContentHeader from './components/addContentHeader/input.js' 
+import submit_addContentHeader from './components/addContentHeader/submit.js' 
 import input_form from './components/form/input.js' 
 import submit_form from './components/form/submit.js' 
  
  const interactions = [
-    input_form,submit_form
+    input_addContentHeader,submit_addContentHeader,input_form,submit_form
   ] 
  
-function attachEventListeners (interactions=[]) {
-  let interactionArray = []
-  
-  for(let interactionObj of interactions) {
-    const objValues = Object.values(interactionObj)
-    console.log({objValues})
+/* Convert multiple base objects containing objects
+into one array of objects as long as the base object 
+are not empty */
+function convertObjectsToArray (arrayOfObjects) {
+  let reducedArray = [];
+
+  for(let interactionObj of arrayOfObjects) {
+    const objValues = Object.values(interactionObj);
     if (objValues && objValues.length > 0) {
-      interactionArray = [...interactionArray, ...objValues]
+      reducedArray = [...reducedArray, ...objValues]
     }
   }
-  console.log({interactionArray})
+
+  return reducedArray;
+}
+
+/* Find a html element by id, add an event listener, 
+event type and callback function */
+function addInteractionToHTML (interactionArray) {
   interactionArray.forEach(interaction => {
     const element = document.getElementById(interaction.elementId);
     element.addEventListener(interaction.eventType, interaction.fn);
-  })
+  });
 }
 
-onload = attachEventListeners(interactions)
+
+function attachEventListeners (interactions=[]) {
+  const interactionArray = convertObjectsToArray(interactions);
+  addInteractionToHTML(interactionArray);
+}
+
+onload = attachEventListeners(interactions);
