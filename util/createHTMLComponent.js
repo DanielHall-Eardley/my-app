@@ -4,7 +4,7 @@
     {
       name: "html element",
       attributes: [
-        { name: "attribute name", value: "attribute value"}
+        { attName: "attribute name", attValue: "attribute value"}
       ],
       content: "inner text"
       children: [
@@ -19,8 +19,8 @@ function addAttributesToElement (htmlELement, attributes) {
 
   if (attributes && attributes.length > 0) {
     attributes.forEach(obj => {
-      const { name, value} = obj;
-      newHtmlElement.setAttribute(name, value);
+      const { attName, attValue} = obj;
+      newHtmlElement.setAttribute(attName, attValue);
     })
   }
 
@@ -33,23 +33,23 @@ function addTextToElement (htmlELement, text) {
   return htmlELement;
 }
 
-function recurseStructure (structure) {
-
-}
-
 exports.createHTMLComponent = function (compStructure) {
   const component = new DocumentFragment();
 
-  compStructure.forEach(obj => {
-    const { name, attributes, content, children } = obj;
-    const htmlElement = document.createElement(name);
-    const htmlElementAtt = addAttributesToElement(htmlElement, attributes);
-    const htmlElementText = addTextToElement(htmlElementAtt, content);
-    component.append(htmlElementText);
-
-    if (children && children.length > 0) {
-      createHTMLComponent(children)
-    }
-  })
-
+  function recursive (elementStructure) {
+    elementStructure.forEach(obj => {
+      const { name, attributes, content, children } = obj;
+      const htmlElement = document.createElement(name);
+      const htmlElementAtt = addAttributesToElement(htmlElement, attributes);
+      const htmlElementText = addTextToElement(htmlElementAtt, content);
+      component.append(htmlElementText);
+  
+      if (children && children.length > 0) {
+        recurse(children)
+      }
+    })
+  }
+  
+  recursive(compStructure);
+  return component;
 }

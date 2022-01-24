@@ -14,11 +14,16 @@
   padding-left: var(--4sp);
 }
 
-.addContentBtn_noScoped 
+.addContentBtn_noScoped button
 {
   border: solid var(--primary-clr) 1px;
   background-color: var(--white);
   color: var(--secondary-clr);
   margin-right: var(--2sp);
+}
+
+.highlight_noScoped button 
+{
+  background-color: var(--primary-clr);
 }
 

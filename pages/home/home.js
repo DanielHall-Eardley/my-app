@@ -5,35 +5,21 @@ import submit_header from './components/header/submit.js'
     input_header,submit_header
   ] 
  
-/* Convert multiple base objects containing objects
-into one array of objects as long as the base object 
-are not empty */
-function convertObjectsToArray (arrayOfObjects) {
-  let reducedArray = [];
-
-  for(let interactionObj of arrayOfObjects) {
-    const objValues = Object.values(interactionObj);
+function attachEventListeners (interactions=[]) {
+  let interactionArray = []
+  
+  for(let interactionObj of interactions) {
+    const objValues = Object.values(interactionObj)
+    console.log({objValues})
     if (objValues && objValues.length > 0) {
-      reducedArray = [...reducedArray, ...objValues]
+      interactionArray = [...interactionArray, ...objValues]
     }
   }
-
-  return reducedArray;
-}
-
-/* Find a html element by id, add an event listener, 
-event type and callback function */
-function addInteractionToHTML (interactionArray) {
+  console.log({interactionArray})
   interactionArray.forEach(interaction => {
     const element = document.getElementById(interaction.elementId);
     element.addEventListener(interaction.eventType, interaction.fn);
-  });
+  })
 }
 
-
-function attachEventListeners (interactions=[]) {
-  const interactionArray = convertObjectsToArray(interactions);
-  addInteractionToHTML(interactionArray);
-}
-
-onload = attachEventListeners(interactions);
+onload = attachEventListeners(interactions)
