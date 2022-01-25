@@ -14,42 +14,46 @@
   ]
 */
 
-function addAttributesToElement (htmlELement, attributes) {
-  const newHtmlElement = htmlELement;
+function addAttributesToElement (htmlElement, attributes) {
+  if(!attributes) return htmlElement;
+  const attributeNames = Object.keys(attributes);
 
-  if (attributes && attributes.length > 0) {
-    attributes.forEach(obj => {
-      const { attName, attValue} = obj;
-      newHtmlElement.setAttribute(attName, attValue);
+  if (attributeNames.length > 0) {
+    attributeNames.forEach(attName => {
+      const attValue = attributes[attName];
+      htmlElement.setAttribute(attName, attValue);
     })
   }
 
-  return newHtmlElement;
+  return htmlElement;
 }
 
 function addTextToElement (htmlELement, text) {
-  const escapedText = document.createTextNode(text);
-  htmlELement.innerText = escapedText
+  if (text) {
+    const escapedText = document.createTextNode(text);
+    htmlELement.appendChild(escapedText)
+  }
+  
   return htmlELement;
 }
 
 exports.createHTMLComponent = function (compStructure) {
   const component = new DocumentFragment();
 
-  function recursive (elementStructure) {
+  function recursive (elementStructure, parent) {
     elementStructure.forEach(obj => {
       const { name, attributes, content, children } = obj;
       const htmlElement = document.createElement(name);
       const htmlElementAtt = addAttributesToElement(htmlElement, attributes);
       const htmlElementText = addTextToElement(htmlElementAtt, content);
-      component.append(htmlElementText);
+      parent.append(htmlElementText);
   
       if (children && children.length > 0) {
-        recurse(children)
+        recursive(children, htmlElementText)
       }
     })
   }
   
-  recursive(compStructure);
+  recursive(compStructure, component);
   return component;
 }

@@ -1,7 +1,16 @@
-const { createHTMLComponent } = require('../../../util/createHTMLComponent');
-const ahaMomentStructure = require('./ahaMomentStructure');
+const { createHTMLComponent } = require('../../../../util/createHTMLComponent');  const ahaMomentStructure = require('./ahaMomentStructure');
 
 module.exports = {
+  '2de24783-c72f-4a7a-8198-474ebedbe323': {
+    interactionType: 'input',
+    eventType: 'click',
+    name: 'blog',
+    elementId: '2de24783-c72f-4a7a-8198-474ebedbe323',
+    fn: function anonymous(event
+) {
+
+}
+  },
   '3138ae19-d03e-4692-8246-905d6b51f4c8': {
     interactionType: 'input',
     eventType: 'click',
@@ -9,7 +18,10 @@ module.exports = {
     elementId: '3138ae19-d03e-4692-8246-905d6b51f4c8',
     fn: function anonymous(event
 ) {
-  
+  const form = document.querySelector('form');
+  const newFormInputs = createHTMLComponent(ahaMomentStructure);
+  form.innerText = '';
+  form.append(newFormInputs);
 }
   },
   '68971064-8235-4d7f-aea1-92eb40661a8f': {

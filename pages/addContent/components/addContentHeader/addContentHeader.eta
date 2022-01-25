@@ -4,15 +4,16 @@
     <ul
       class="addContentHeader_contentNav_891855fc-c20a-4364-8298-eda4e510bd7c"
     >
-      <li class="addContentBtn_noScoped highlight_noScoped">
+      <li class="addContentHeader_noScoped highlight_noScoped">
         <button
           data-interaction="input"
           data-event-type="click"
           data-name="blog"
+          id="2de24783-c72f-4a7a-8198-474ebedbe323"
         >
           Blog
         </button>
-      </li>    
+      </li>
       <li class="addContentBtn_noScoped">
         <button
           data-interaction="input"
