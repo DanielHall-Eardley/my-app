@@ -1,8 +1,10 @@
-import input_header from './components/header/input.js' 
-import submit_header from './components/header/submit.js' 
+import input_addContentHeader from '../addContentHeader/input.js' 
+import submit_addContentHeader from '../addContentHeader/submit.js' 
+import input_form from './input.js' 
+import submit_form from './submit.js' 
  
  const interactions = [
-    input_header,submit_header
+    input_addContentHeader,submit_addContentHeader,input_form,submit_form
   ] 
  
 /* Convert multiple base objects containing objects

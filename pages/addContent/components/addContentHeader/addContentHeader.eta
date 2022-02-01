@@ -1,59 +1,60 @@
-<header class="addContentHeader_container_51da9721-bf79-4b6f-8cf3-b0bf74c33e9f">
-  <h1>Choose what to add:</h1>
-  <nav>
-    <ul
-      class="addContentHeader_contentNav_891855fc-c20a-4364-8298-eda4e510bd7c"
-    >
-      <li class="addContentHeader_noScoped highlight_noScoped">
-        <button
-          data-interaction="input"
-          data-event-type="click"
-          data-name="blog"
-          id="2de24783-c72f-4a7a-8198-474ebedbe323"
-        >
-          Blog
-        </button>
-      </li>
-      <li class="addContentBtn_noScoped">
-        <button
-          data-interaction="input"
-          data-event-type="click"
-          data-name="ahaMoment"
-          id="3138ae19-d03e-4692-8246-905d6b51f4c8"
-        >
-          Aha Moment
-        </button>
-      </li>
-      <li class="addContentBtn_noScoped">
-        <button
-          data-interaction="input"
-          data-event-type="click"
-          data-name="dadHack"
-          id="68971064-8235-4d7f-aea1-92eb40661a8f"
-        >
-          Dad Hack
-        </button>
-      </li>
-      <li class="addContentBtn_noScoped">
-        <button
-          data-interaction="input"
-          data-event-type="click"
-          data-name="mainProject"
-          id="3083f3d6-fce9-4c9f-ba1e-ec944fd22324"
-        >
-          Main Project
-        </button>
-      </li>
-      <li class="addContentBtn_noScoped">
-        <button
-          data-interaction="input"
-          data-event-type="click"
-          data-name="SideProject"
-          id="c832007e-196d-4e8b-84cc-134a1bf25cbb"
-        >
-          Side Project
-        </button>
-      </li>
-    </ul>
-  </nav>
+<header
+	class="addContentHeader_container_51da9721-bf79-4b6f-8cf3-b0bf74c33e9f"
+>
+	<h1>Choose what to add:</h1>
+	<nav>
+		<ul
+			class="addContentHeader_contentNav_891855fc-c20a-4364-8298-eda4e510bd7c"
+		>
+			<li>
+				<a class="addContentBtn_noScoped" href="/create/content">
+					Blog
+				</a>
+			</li>
+			<li>
+				<button
+					class="addContentBtn_noScoped"
+					data-interaction="input"
+					data-event-type="click"
+					data-name="ahaMoment"
+					id="3138ae19-d03e-4692-8246-905d6b51f4c8"
+				>
+					Aha Moment
+				</button>
+			</li>
+			<li>
+				<button
+					class="addContentBtn_noScoped"
+					data-interaction="input"
+					data-event-type="click"
+					data-name="dadHack"
+					id="68971064-8235-4d7f-aea1-92eb40661a8f"
+				>
+					Dad Hack
+				</button>
+			</li>
+			<li>
+				<button
+					class="addContentBtn_noScoped"
+					data-interaction="input"
+					data-event-type="click"
+					data-name="mainProject"
+					id="3083f3d6-fce9-4c9f-ba1e-ec944fd22324"
+				>
+					Main Project
+				</button>
+			</li>
+			<li>
+				<button
+					class="addContentBtn_noScoped"
+					data-interaction="input"
+					data-event-type="click"
+					data-name="SideProject"
+					id="c832007e-196d-4e8b-84cc-134a1bf25cbb"
+				>
+					Side Project
+				</button>
+			</li>
+		</ul>
+	</nav>
 </header>

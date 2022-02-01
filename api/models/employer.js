@@ -1,6 +1,6 @@
 const employer = `
-  CREATE TABLE IF NOT EXISTS main_project (
-    employer_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  CREATE TABLE IF NOT EXISTS employer (
+    employer_id UUID PRIMARY KEY NOT NULL,
     name VARCHAR(50) NOT NULL,
     address TEXT,
     phone_number SMALLINT

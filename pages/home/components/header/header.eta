@@ -1,14 +1,19 @@
-<header class="header_container_58252e48-cedf-488e-903f-d3b1f4acc197">
-  <h1 class="header_name_9b56c347-fa8a-459c-acb2-909a7898c077">
-    Daniel Hall-Eardley
-  </h1>
-  <button
-    class="btnLink_noScoped"
-    data-interaction="input"
-    data-event-type="click"
-    data-name="downloadResume"
-    id="34be11ac-95fb-4c9b-a4e0-a0a0c26be29b"
-  >
-    Download Resume</button
-  ><a class="btnLink_noScoped" href="/create/content"> Add Content </a>
+<header
+	class="header_container_58252e48-cedf-488e-903f-d3b1f4acc197"
+>
+	<h1 class="header_name_9b56c347-fa8a-459c-acb2-909a7898c077">
+		Daniel Hall-Eardley
+	</h1>
+	<button
+		class="btnLink_noScoped"
+		data-interaction="input"
+		data-event-type="click"
+		data-name="downloadResume"
+		id="34be11ac-95fb-4c9b-a4e0-a0a0c26be29b"
+	>
+		Download Resume
+	</button>
+	<a class="btnLink_noScoped" href="/content/create">
+		Add Content
+	</a>
 </header>

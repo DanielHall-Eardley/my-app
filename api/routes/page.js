@@ -6,6 +6,6 @@ const {
 
 router.get('/', getHomePage);
 
-router.get('/create/content', getAddContentPage);
+router.get('/content/create', getAddContentPage);
 
 module.exports = router
