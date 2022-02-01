@@ -2,38 +2,53 @@ const { initDB } = require('../db/db');
 const db = initDB();
 const catchAsyncError = require('../../util/catchAsyncError');
 
-exports.postBlog = catchAsyncError(async (req, res, next) => {
-  console.log(req.body)
-  console.log(req.file)
+function createSQlInsert (formBody, tableName, customFields) {
+  const params = createParams(formBody, customFields);
+  const query = createInsertQuery(params, tableName);
+
+  return {
+    params,
+    query
+  }
+}
+
+function createParams (formBody, customFields) {
+  const fieldNames = Object.keys(formBody)
+
+  /* formdata needs to always match the db model */
+  const formData = fieldNames.reduce((name, obj) => {
+    const paramName = `$${name}`;
+    obj[paramName] = formBody[name];
+    return obj;
+  }, {});
+
+  const paramObj = { ...formData, ...customFields };
+  return paramObj;
+}
+
+function createInsertQuery (paramObj, tableName) {
+  const paramNames = Object.keys(paramObj);
+  const columnNames = paramNames.map(name => name.slice(1));
   const query = `
-    INSERT INTO blog (
-      title,
-      date,
-      readtime,
-      url
-    ) VALUES (
-      $title,
-      $date,
-      $readtime,
-      $url
-    );
-  `
+  INSERT INTO ${tableName} (
+    ${columnNames.toString()}
+  ) VALUES (
+    ${paramNames.toString()}
+  );
+`
 
-  const {
-    title,
-    readtime,
-    date
-  } = req.body;
+  return query;
+}
 
-  const params = {
-    $title: title,
-    $readtime: readtime,
-    $date: date,
+exports.postBlog = catchAsyncError(async (req, res, next) => {
+  const customParams = {
     $url: req.file.path,
   }
 
-  const result = db.run(query, params);
-  console.log(result)
+  const { query, params } = createSQlInsert(req.body, 'blog', customParams);
+  console.log(query, params)
+  db.run(query, params);
+  // redirect to blog page
 })
 
 exports.postAhaMoment = catchAsyncError(async (req, res, next) => {

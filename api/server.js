@@ -23,7 +23,7 @@ const tableArray = [
   sideProjectModel
 ]
 
-// db.initTables(tableArray);
+db.initTables(tableArray);
 
 eta.configure({
   tags: ["{{", "}}"]
