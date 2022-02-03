@@ -2,19 +2,9 @@ const { initDB } = require('../db/db');
 const db = initDB();
 const catchAsyncError = require('../../util/catchAsyncError');
 
-function createSQlInsert (formBody, tableName, customFields) {
-  const params = createParams(formBody, customFields);
-  const query = createInsertQuery(params, tableName);
-
-  return {
-    params,
-    query
-  }
-}
-
 function createParams (formBody, customFields) {
   const fieldNames = Object.keys(formBody)
-
+  console.log(fieldNames)
   /* formdata needs to always match the db model */
   const formData = fieldNames.reduce((name, obj) => {
     const paramName = `$${name}`;
@@ -44,9 +34,9 @@ exports.postBlog = catchAsyncError(async (req, res, next) => {
   const customParams = {
     $url: req.file.path,
   }
+  const params = createParams(req.body, customParams);
+  const query = createInsertQuery(params, 'blog');
 
-  const { query, params } = createSQlInsert(req.body, 'blog', customParams);
-  console.log(query, params)
   db.run(query, params);
   // redirect to blog page
 })
