@@ -77,22 +77,28 @@
   {
     font-size: 2.5rem;
     font-weight: var(--heading-bold);
-    padding-bottom: var(--1sp);
+    padding-bottom: var(--2sp);
   }
+
+  h4 {
+    font-weight: var(--heading-bold);
+  }
+
 
   body 
   {
     font-family: var(--body-ft);
     font-weight: var(--body-regular);
     font-size: 2rem;
+    line-height: 1.8;
   }
 
-  #pageHeader {
+  header, footer {
     padding: var(--4sp);
     background-color: var(--secondary-clr);
   }
 
-  #pageHeader a {
+  #pageHeader a, #pageFooter a{
     color: var(--primary-clr);
   }
 
@@ -100,20 +106,30 @@
     padding-right: var(--3sp);
   }
 
-  .section {
+  section {
     padding-top: var(--5sp);
     padding-left: var(--5sp);
     padding-right: var(--5sp);
   }
 
+  ul {
+    padding-left: var(--6sp); 
+    padding-right: var(--6sp); 
+    padding-top: var(--2sp);
+  }
+
   @media only screen and (min-width: 900px) {
-    .about p {
+    p, ul {
       padding-right: 40%;
     }
   }
 
-  .about ul {
-    padding: var(--2sp) var(--6sp); 
+  .company {
+    padding-bottom: var(--1sp);
+  }
+
+  .hobbies {
+    padding-bottom: var(--3sp);
   }
 </style>
 <body>
@@ -149,16 +165,47 @@
       <div class="company">
         <h4>Cinemaloop</h4>
         <p>Part Time | December 2020 - Present</p>  
-        <p>Summary</p>
-        <p>Highlights</p>
+        <p>
+          Cinemaloop is a social media platform being built for cinemagoers.
+          It is built on React, Node, Express and Mongodb with a REST API.
+        </p>
+        <ul>
+          <li>
+            Built the front and back end for movie information page,
+            including Facebook style comments and reviews.
+          </li>
+          <li>
+            Integrated with the Google location API and built automatic geolocation and
+            address autocompletion using a proxy server to protect API keys.
+          </li>
+          <li>
+            Decreased the load time of a REST API endpoint that was responsible
+            finding users within a location search radius.
+          </li>
+        </ul>
       </div>
       <div class="company">
         <h4>Litt</h4>
         <p>Full Time | March 2020 - June 2020</p>  
-        <p>Summary</p>
-        <p>Highlights</p>
+        <p>Litt is a social media platform similar to Meetup.</p>
+        <ul>
+          <li>Built feature for a mobile app using React Native</li>
+          <li>Updated a dependecy with breacking changes (React-Router v3 => v5)</li>
+        </ul>
       </div>
     </section>
+    <section class="hobbies">
+      <h3>Hobbies</h3>
+      <ul>
+        <li>Rebuilding muscle cars</li>
+        <li>Cabinet making</li>
+      </ul>
+    </section>
   </main>
+  <footer id="pageFooter"> 
+    <a href="https://github.com/DanielHall-Eardley">
+      Check out my Github for code samples: https://github.com/DanielHall-Eardley
+    </a>
+  </footer>
 </body>
 </html>

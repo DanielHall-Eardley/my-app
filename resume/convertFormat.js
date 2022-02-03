@@ -1,7 +1,10 @@
 const fs = require('fs');
 const pdf = require('html-pdf');
 const html = fs.readFileSync('./index.html', 'utf8');
-const options = { format: 'Letter' };
+
+const options = { 
+  format: 'A4',
+ };
 
 const timestamp = new Date().toLocaleString();
 const filename = `./Daniel Hall-Eardley ${timestamp}.pdf`
