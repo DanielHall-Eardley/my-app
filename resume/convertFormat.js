@@ -8,5 +8,5 @@ const filename = `./Daniel Hall-Eardley ${timestamp}.pdf`
 
 pdf.create(html, options).toFile(filename, function(err, res) {
   if (err) return console.log(err);
-  console.log(res); // { filename: '/app/businesscard.pdf' }
+  console.log(res); 
 });

@@ -4,10 +4,117 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <title>Daniel Hall-Eardley's Resume</title>
 </head>
-<style>
+  <style>
+    * 
+  {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
+  html 
+  {
+    font-size: 10px;
+  }
+
+  :root 
+  {
+    /* colors */
+    --brown: #231900;
+    --yellow: #FFCC00;
+    --white: #FFFFFF;
+
+    /* color assignment */
+    --primary-clr: var(--yellow);
+    --secondary-clr: var(--brown);
+
+    /* typography */
+    --heading-ft: 'Open Sans', sans-serif;
+    --heading-light: 300;
+    --heading-regular: 400;
+    --heading-bold: 700;
+    --body-ft: 'Merriweather', serif;
+    --body-light: 300;
+    --body-regular: 400;
+
+    /* spacing */
+    --1sp: .8rem;
+    --2sp: 1.6rem;
+    --3sp: 2.4rem;
+    --4sp: 3.2rem;
+    --5sp: 4rem;
+    --6sp: 4.8rem;
+
+    /* border radius */
+    --rad-sm: 4px;
+  }
+
+  h1, h2, h3, h4, h5, h6 
+  {
+    font-family: var(--heading-ft);
+    font-weight: var(--heading-regular);
+    color: var(--primary-clr);
+  }
+
+  h1 
+  {
+    font-size: 4.2rem;
+    font-weight: var(--heading-bold);
+  }
+
+  h2 
+  {
+    font-size: 3.1rem;
+  }
+
+  h3 
+  {
+    font-size: 2.5rem;
+    font-weight: var(--heading-bold);
+    padding-bottom: var(--1sp);
+  }
+
+  body 
+  {
+    font-family: var(--body-ft);
+    font-weight: var(--body-regular);
+    font-size: 2rem;
+  }
+
+  #pageHeader {
+    padding: var(--4sp);
+    background-color: var(--secondary-clr);
+  }
+
+  #pageHeader a {
+    color: var(--primary-clr);
+  }
+
+  .phone {
+    padding-right: var(--3sp);
+  }
+
+  .section {
+    padding-top: var(--5sp);
+    padding-left: var(--5sp);
+    padding-right: var(--5sp);
+  }
+
+  @media only screen and (min-width: 900px) {
+    .about p {
+      padding-right: 40%;
+    }
+  }
+
+  .about ul {
+    padding: var(--2sp) var(--6sp); 
+  }
 </style>
 <body>
   <header id="pageHeader">
@@ -15,7 +122,7 @@
       Daniel Hall-Eardley
     </h1>
     <h2>
-      <a href="tel:6472681072S">647-268-1072</a>
+      <a class="phone" href="tel:6472681072S">647-268-1072</a>
       <a href="mailto:350chevy8@gmail.com">
         350chevy8@gmail.com
       </a>
@@ -23,6 +130,7 @@
   </header>
   <main>
     <section class="about">
+      <h3>About me</h3>
       <p spellcheck="true">
         I am full stack web developer focused on building applications
         using HTML, CSS and Javascript based technologies. My most used tech
@@ -31,8 +139,25 @@
           <li>Postgresql</li>
           <li>Vue.js</li>
           <li>React Native</li>
+          <li>WebSockets</li>
+          <li>CSS Flexbox and Grid</li>
         </ul>
       </p>
+    </section>
+    <section class="experience">
+      <h3>Experience</h3>
+      <div class="company">
+        <h4>Cinemaloop</h4>
+        <p>Part Time | December 2020 - Present</p>  
+        <p>Summary</p>
+        <p>Highlights</p>
+      </div>
+      <div class="company">
+        <h4>Litt</h4>
+        <p>Full Time | March 2020 - June 2020</p>  
+        <p>Summary</p>
+        <p>Highlights</p>
+      </div>
     </section>
   </main>
 </body>
