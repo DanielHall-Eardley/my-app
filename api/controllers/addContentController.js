@@ -1,7 +1,9 @@
 const { initDB } = require('../db/db');
 const db = initDB();
 const catchAsyncError = require('../../util/catchAsyncError');
-const { uuid: v4 } = require('uuid');
+const { v4: uuid } = require('uuid');
+const employer = require('../models/employer');
+const { find } = require('../../pages/addContent/components/addContentHeader/mainProjectStructure');
 
 /* Create param object from the request body, 
 plus any custom fields */
@@ -57,18 +59,48 @@ exports.postDadHack = catchAsyncError(async (req, res, next) => {
   db.run(query, params);
 })
 
-exports.postMainProject = catchAsyncError(async (req, res, next) => {
-  const customEmployerParams = {
-    employer_id: uuid(),
-    name: req.body.employerName,
-    addres
+function removeEmployerFields (formBody) {
+  const fieldNames = Object.keys(formBody);
+  const mainProjectParams = {};
+  for (let name of fieldNames) {
+    if (!name.match('employer')) {
+      mainProjectParams[name] = formBody[name];
+    }
   }
 
-  const employerParams = createParams(req.body);
-  const employerQuery = createInsertQuery(employerParams, 'employer');
-  db.run(employerQuery, params);
+  return mainProjectParams;
+}
 
-  const params = createParams(req.body);
+function findEmployer (db) {
+  const query = `
+    SELECT * FROM employer AS e
+    WHERE e.employer_id = $employer_id
+  `
+  const param = { $employer_id: employerId };
+  const employer = db.get(query, param)
+  return employer
+}
+
+exports.postMainProject = catchAsyncError(async (req, res, next) => {
+  const employerId = uuid()
+  const customEmployerParams = {
+    $employer_id: employerId,
+    $name: req.body.employerName,
+    $address: req.body.employerAddress,
+    $phone_number: req.body.employerPhoneNo
+  }
+
+  const employerParams = createParams({}, customEmployerParams);
+  const employerQuery = createInsertQuery(employerParams, 'employer');
+  const result = db.run(employerQuery, employerParams);
+  const employer = findEmployer(result);
+  
+  const mainProjectParams = removeEmployerFields(req.body);
+  console.log(mainProjectParams)
+  const customMainProjectParams = {
+    $employer_id: employer.employer_id
+  }
+  const params = createParams(mainProjectParams, customMainProjectParams);
   const query = createInsertQuery(params, 'main_project');
   db.run(query, params);
   
