@@ -1,10 +1,16 @@
-import input_addContentHeader from '../addContentHeader/input.js' 
-import submit_addContentHeader from '../addContentHeader/submit.js' 
-import input_form from './input.js' 
-import submit_form from './submit.js' 
+import input_aboutMe from './components/aboutMe/input.js' 
+import submit_aboutMe from './components/aboutMe/submit.js' 
+import input_contact from './components/contact/input.js' 
+import submit_contact from './components/contact/submit.js' 
+import input_experience from './components/experience/input.js' 
+import submit_experience from './components/experience/submit.js' 
+import input_footer from './components/footer/input.js' 
+import submit_footer from './components/footer/submit.js' 
+import input_hobbies from './components/hobbies/input.js' 
+import submit_hobbies from './components/hobbies/submit.js' 
  
  const interactions = [
-    input_addContentHeader,submit_addContentHeader,input_form,submit_form
+    input_aboutMe,submit_aboutMe,input_contact,submit_contact,input_experience,submit_experience,input_footer,submit_footer,input_hobbies,submit_hobbies
   ] 
  
 /* Convert multiple base objects containing objects
@@ -27,7 +33,8 @@ function convertObjectsToArray (arrayOfObjects) {
 event type and callback function */
 function addInteractionToHTML (interactionArray) {
   interactionArray.forEach(interaction => {
-    const element = document.getElementById(interaction.elementId);
+    const className = '.' + interaction.elementId
+    const element = document.querySelector(className);
     element.addEventListener(interaction.eventType, interaction.fn);
   });
 }

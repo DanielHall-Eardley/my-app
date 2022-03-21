@@ -1,0 +1,13 @@
+{{ layout("../../layouts/default.eta", it.pageInfo) }}
+  <main>
+    {{~ includeFile("./components/contact/contact.eta") }}
+    {{~ includeFile("./components/aboutMe/aboutMe.eta") }}
+    {{~ includeFile(
+      "./components/experience/experience.eta", 
+      { projects: it.content.projects }) 
+    }}
+    {{~ includeFile("./components/hobbies/hobbies.eta") }}
+    {{~ includeFile("./components/footer/footer.eta") }}
+  </main>
+</body>
+</html>

@@ -1,24 +1,23 @@
 <form
-	class="form_container_bf8b6b03-790f-4cb3-87a9-994cf2fb6930"
+	class="formContainer"
 	action="/content/create/blog"
 	method="post"
-	enctype="multipart/form-data"
->
-	<div class="inputContainer_noScoped">
+	enctype="multipart/form-data">
+	<div class="inputContainer" >
 		<label for="blogTitle">Enter a title</label>
-		<input id="blogTitle" name="title" type="text" />
+		<input id="blogTitle" name="title" type="text">
 	</div>
-	<div class="inputContainer_noScoped">
+	<div class="inputContainer">
 		<label for="blogDate">Enter the date</label>
-		<input id="blogDate" name="date" type="date" />
+		<input id="blogDate" name="date" type="date">
 	</div>
-	<div class="inputContainer_noScoped">
+	<div class="inputContainer">
 		<label for="blogReadTime">Enter a read time</label>
-		<input id="blogReadTime" name="readtime" type="number" />
+		<input id="blogReadTime" name="readtime" type="number">
 	</div>
-	<div class="inputContainer_noScoped">
+	<div class="inputContainer">
 		<label for="blogFile">Upload the file</label>
-		<input id="blogFile" name="blog" type="file" />
+		<input id="blogFile" name="blog" type="file">
 	</div>
 	<button>Submit</button>
 </form>

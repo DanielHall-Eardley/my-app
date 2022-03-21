@@ -1,0 +1,11 @@
+<section class="projectsContainer cardContainer" >
+<h2>{{= it.category }}</h2>
+	<ul class="projectsList">
+		{{ it.projects.forEach(function(project) { }} 
+			{{~ includeFile(it.path, project) }} 
+		{{ }) }}
+	</ul>
+	{{ if (it.child?.path) { }}
+		{{~ includeFile(it.child.path) }}
+	{{ } }}
+</section>

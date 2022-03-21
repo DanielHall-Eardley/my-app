@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../../../pages/addContent/components/addContentHeader/addContentHeader.css", "../../../pages/addContent/components/form/form.css"],
-  "sourcesContent": [" .addContentHeader_container_51da9721-bf79-4b6f-8cf3-b0bf74c33e9f \n{\n  display: flex;\n  padding-top: var(--4sp);\n  padding-right: var(--4sp);\n  padding-left: var(--4sp);\n}\n\n .addContentHeader_contentNav_891855fc-c20a-4364-8298-eda4e510bd7c \n{\n  display: flex;\n  align-items: center;\n  height: 100%;\n  padding-left: var(--4sp);\n}\n\n.addContentBtn_noScoped\n{\n  border: solid var(--primary-clr) 1px;\n  background-color: var(--white);\n  color: var(--secondary-clr);\n  margin-right: var(--2sp);\n}\n\n.highlight_noScoped button \n{\n  background-color: var(--primary-clr);\n}\n\n\n\n", " .form_container_bf8b6b03-790f-4cb3-87a9-994cf2fb6930 \n{\n  padding: var(--3sp) var(--6sp);\n}\n\n.inputContainer_noScoped {\n  padding-bottom: var(--2sp);\n}\n\n"],
-  "mappings": "AAAC,iEAEC,aACA,uBACA,yBACA,wBAGD,kEAEC,aACA,mBACA,YACA,wBAGF,wBAEE,oCACA,8BACA,2BACA,wBAGF,2BAEE,oCC1BD,qDAEC,8BAGF,yBACE",
+  "sourcesContent": [".addContentHeaderContainer {\n  display: flex;\n  padding-top: var(--4sp);\n  padding-right: var(--4sp);\n  padding-left: var(--4sp);\n}\n\n.addContentHeaderContentNav {\n  display: flex;\n  align-items: center;\n  height: 100%;\n  padding-left: var(--4sp);\n}\n\n.addContentBtn {\n  border: solid var(--primary-clr) 1px;\n  background-color: var(--white);\n  color: var(--secondary-clr);\n  margin-right: var(--2sp);\n}\n\n.addContentHighlightBtn {\n  background-color: var(--primary-clr);\n}\n", ".formContainer {\n  padding: var(--3sp) var(--6sp);\n}\n\n.inputContainer {\n  padding-bottom: var(--2sp);\n}\n"],
+  "mappings": "AAAA,2BACE,aACA,uBACA,yBACA,wBAGF,4BACE,aACA,mBACA,YACA,wBAGF,eACE,oCACA,8BACA,2BACA,wBAGF,wBACE,oCCtBF,eACE,8BAGF,gBACE",
   "names": []
 }

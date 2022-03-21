@@ -1,259 +1,259 @@
 module.exports = [
   {
-    name: 'div',
+    name: "div",
     attributes: {
-      class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectTitle'
+          for: "mainProjectTitle",
         },
-        content: 'Enter a title'
+        content: "Enter a title",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'mainProjectTitle',
-          name: 'title',
-          type: 'text'
-        }            
-      }
-    ]
+          id: "mainProjectTitle",
+          name: "title",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-      class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectExplanation'
+          for: "mainProjectExplanation",
         },
-        content: 'Describe the project'
+        content: "Describe the project",
       },
       {
-        name: 'textarea',
+        name: "textarea",
         attributes: {
-          id: 'mainProjectExplanation',
-          name: 'explanation'          
+          id: "mainProjectExplanation",
+          name: "explanation",
         },
-      }
-    ]
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-      class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectStart'
+          for: "mainProjectStart",
         },
-        content: 'Enter the start date'
+        content: "Enter the start date",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'mainProjectStart',
-          name: 'start',
-          type: 'date'
-        }
-      }
-    ]
+          id: "mainProjectStart",
+          name: "start",
+          type: "date",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-      class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectEnd'
+          for: "mainProjectEnd",
         },
-        content: 'Enter the end date'
+        content: "Enter the end date",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'mainProjectEnd',
-          name: 'end',
-          type: 'date'
-        }
-      }
-    ]
+          id: "mainProjectEnd",
+          name: "end",
+          type: "date",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectTech'
+          for: "mainProjectTech",
         },
-        content: 'Enter comma seperated list of tech'
+        content: "Enter comma seperated list of tech",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'mainProjectTech',
-          name: 'tech_stack',
-          type: 'text'
-        }
-      }
-    ]
+          id: "mainProjectTech",
+          name: "tech_stack",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectUrl'
+          for: "mainProjectUrl",
         },
-        content: 'Enter app url'
+        content: "Enter app url",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'mainProjectUrl',
-          name: 'url',
-          type: 'text'
-        }
-      }
-    ]
+          id: "mainProjectUrl",
+          name: "url",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectGithub'
+          for: "mainProjectGithub",
         },
-        content: 'Enter app github url'
+        content: "Enter app github url",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'mainProjectGithub',
-          name: 'github',
-          type: 'text'
-        }
-      }
-    ]
+          id: "mainProjectGithub",
+          name: "github",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'mainProjectAccomplishments'
+          for: "mainProjectAccomplishments",
         },
-        content: 'Show your key accomplishments'
+        content: "Show your key accomplishments",
       },
       {
-        name: 'input',
+        name: "textarea",
         attributes: {
-          id: 'mainProjectAccomplishments',
-          name: 'accomplishments',
-          type: 'text'
-        }
-      }
-    ]
+          id: "mainProjectAccomplishments",
+          name: "accomplishments",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'employerName'
+          for: "employerName",
         },
-        content: 'Enter your employer\'s name'
+        content: "Enter your employer's name",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'employerName',
-          name: 'employerName',
-          type: 'text'
-        }
-      }
-    ]
+          id: "employerName",
+          name: "employerName",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'employerAddress'
+          for: "employerAddress",
         },
-        content: 'Enter your employer\'s address'
+        content: "Enter your employer's address",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'employerAddress',
-          name: 'employerAddress',
-          type: 'text'
-        }
-      }
-    ]
+          id: "employerAddress",
+          name: "employerAddress",
+          type: "text",
+        },
+      },
+    ],
   },
   {
-    name: 'div',
+    name: "div",
     attributes: {
-        class: 'inputContainer_noScoped'
+      class: "inputContainer_noScoped",
     },
     children: [
       {
-        name: 'label',
+        name: "label",
         attributes: {
-          for: 'employerPhoneNo'
+          for: "employerPhoneNo",
         },
-        content: 'Enter your employer\'s phone number'
+        content: "Enter your employer's phone number",
       },
       {
-        name: 'input',
+        name: "input",
         attributes: {
-          id: 'employerPhoneNo',
-          name: 'employerPhoneNo',
-          type: 'text'
-        }
-      }
-    ]
+          id: "employerPhoneNo",
+          name: "employerPhoneNo",
+          type: "text",
+        },
+      },
+    ],
   },
 
   {
-    name: 'button',
-    content: 'Submit'
-  }
-]
+    name: "button",
+    content: "Submit",
+  },
+];

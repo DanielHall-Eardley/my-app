@@ -1,0 +1,20 @@
+<section class="projectBody">
+  <p class="projectSummary">
+    {{= it.explanation }}
+  </p>
+  <p class="projectTech">
+    Stack: {{= it.tech_stack }}
+  </p>
+  {{~ includeFile(
+    "../checkArray/checkArray.eta",
+    {
+      array: it.accomplishments,
+      component: "../accomplishments/accomplishments.eta"
+    })
+  }}
+  {{~ includeFile(
+      "../employer/employer.eta",
+      it 
+    )
+  }}
+</section>

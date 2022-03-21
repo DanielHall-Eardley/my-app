@@ -1,0 +1,3 @@
+{{ if (it.array && Array.isArray(it.array) && it.array.length > 0) { }}
+  {{~ includeFile(it.component, { array: it.array}) }}
+{{ } }}

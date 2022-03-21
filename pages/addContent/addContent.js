@@ -27,7 +27,8 @@ function convertObjectsToArray (arrayOfObjects) {
 event type and callback function */
 function addInteractionToHTML (interactionArray) {
   interactionArray.forEach(interaction => {
-    const element = document.getElementById(interaction.elementId);
+    const className = '.' + interaction.elementId
+    const element = document.querySelector(className);
     element.addEventListener(interaction.eventType, interaction.fn);
   });
 }

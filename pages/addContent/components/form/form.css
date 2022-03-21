@@ -1,9 +1,7 @@
- .form_container_bf8b6b03-790f-4cb3-87a9-994cf2fb6930 
-{
+.formContainer {
   padding: var(--3sp) var(--6sp);
 }
 
-.inputContainer_noScoped {
+.inputContainer {
   padding-bottom: var(--2sp);
 }
-

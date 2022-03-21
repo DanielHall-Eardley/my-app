@@ -1,0 +1,24 @@
+<section class="cardContainer ahaMomentContainer">
+  <h2>Aha Moments</h2>
+  <ul class="ahaMomentList">
+    {{ it.ahaMoments.forEach(moment => { }}
+      <li class="ahaMoment">
+        <h3>
+          <span>{{= moment.title }}</span>
+          <span>{{= moment.date }}</span>
+          {{ for (let i = 0; i <= moment.rating; i += 1) { }}
+            <span class="ahaMomentRating">&#128293;</span>
+          {{ } }}
+        </h3>
+        <p>
+          {{= moment.content }}
+        </p>
+      </li>
+    {{ }) }}
+  </ul>
+  <div class="viewAllLink">
+    <a href="/view/ahamoments">
+      View All
+    </a>
+  </div>
+</section>

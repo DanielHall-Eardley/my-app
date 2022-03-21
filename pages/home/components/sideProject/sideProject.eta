@@ -1,0 +1,19 @@
+<li class="projectSummaryContainer">
+	<h3 class="projectSummary">
+		<span>{{= it.title }}</span>
+	</h3>
+	<p class="projectSummaryExplanation"> 
+		{{= it.explanation }}
+	</p>
+	<p class="sideProjectTech">
+		{{= it.tech_stack }}
+	</p>
+		<div class="projectSummaryLinks" > 
+			{{ if (it.url) { }} 
+				<a href="{{= it.url}}">Website</a>
+			{{ } }}
+			{{ if (it.github) { }} 
+				<a href="{{= it.github}}">Github</a>
+			{{ } }}
+		</div>
+	</li>

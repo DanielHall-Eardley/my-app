@@ -1,0 +1,14 @@
+.projectBody {
+  padding-top: var(--2sp);
+  padding-left: 20vw;
+  padding-right: 20vw;
+  padding-bottom: calc(8rem + var(--2sp));
+}
+
+.projectSummary {
+  padding-bottom: var(--2sp);
+}
+
+.projectTech {
+  padding-bottom: var(--2sp);
+}

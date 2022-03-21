@@ -1,0 +1,17 @@
+<aside class="employerContainer">
+  <h3>Employer</h3>
+  <ul class="employerList">
+    <li class="employerName">
+      <span class="employerFieldName">Name: </span>
+      {{= it.name }}
+    </li>
+    <li class="employerName">
+      <span class="employerFieldName">Address: </span>
+      {{= it.address }}
+    </li>
+    <li class="employerName">
+      <span class="employerFieldName">Phone:  </span>
+      {{= it.phone_number }}
+    </li>
+  </ul>
+</aside>

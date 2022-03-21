@@ -1,0 +1,6 @@
+<footer class="projectFooter">
+  <nav class="projectLinks">
+    <a href="{{= it.url }}">Website</a>
+    <a href="{{= it.github }}">Github</a>
+  </nav>
+</footer>

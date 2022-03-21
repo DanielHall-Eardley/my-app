@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../pages/resume/components/contact/contact.css"],
+  "sourcesContent": [".resumeHeader {\n  background-color: var(--secondary-clr);\n  color: var(--primary-clr);\n  padding: var(--4sp);\n}\n\n.resumeName {\n  padding-bottom: var(--2sp);\n}\n\n.resumeContact a {\n  padding-right: var(--3sp);\n}\n"],
+  "mappings": "AAAA,cACE,sCACA,yBACA,mBAGF,YACE,0BAGF,iBACE",
+  "names": []
+}

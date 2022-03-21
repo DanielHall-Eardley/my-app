@@ -1,0 +1,17 @@
+{{ layout("../../layouts/default.eta", it.pageInfo) }}
+
+<main>
+  {{~ includeFile(
+    "./components/header/header.eta", 
+    it.content) 
+  }}
+  {{~ includeFile(
+    "./components/body/body.eta", 
+    it.content) 
+  }}
+  {{~ includeFile(
+    "./components/footer/footer.eta", 
+    it.content) 
+  }}
+  
+</main>

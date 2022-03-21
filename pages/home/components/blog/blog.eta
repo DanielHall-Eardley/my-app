@@ -1,0 +1,15 @@
+<section class="cardContainer blogContainer">
+  <h2>Blogs</h2>
+  <ul class="blogList">
+    {{ it.blogs.forEach(blog => { }}
+      <li class="blogSummary">
+        <h3>{{= blog.title }}</h3>
+        <p>
+          <span>{{= blog.readtime }}</span>
+          <span>{{= blog.date }}</span>
+        </p>
+        <a href="/view/blog/{{= blog.id }}">Read</a>
+      </li>
+    {{ }) }}
+  </ul>
+</section>

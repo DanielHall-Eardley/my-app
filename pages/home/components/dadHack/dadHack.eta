@@ -1,0 +1,22 @@
+<section class="cardContainer dadHackContainer">
+  <h2>Dad Hacks</h2>
+  <ul class="dadHacksList">
+    {{ it.dadHacks.forEach(hack => { }}
+      <li class="ahaMoment">
+        <h3>
+          <span>{{= hack.title }}</span>
+          <span>{{= hack.date }}</span>
+        </h3>
+        <p> {{= hack.category }}
+        <p>
+          {{= hack.content }}
+        </p>
+      </li>
+    {{ }) }}
+  </ul>
+  <div class="viewAllLink">
+    <a href="/view/dad-hacks">
+      View All
+    </a>
+  </div>
+</section>

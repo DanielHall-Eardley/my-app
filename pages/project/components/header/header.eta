@@ -1,0 +1,10 @@
+<header>
+  <h1 class="projectTitle">
+    <span>{{= it.title }}</span>
+    <a href="/">Home</a>
+  </h1>
+  <h2 class="projectDuration">
+    {{= it.start }} - {{= it.end }}
+  </h2>
+</header> 
+

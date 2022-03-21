@@ -1,0 +1,9 @@
+<section class="aboutMeContainer cardContainer">
+	<h2>About Me</h2>
+	<img>
+	<p>
+		I am a tenacious full stack web developer that enjoys
+		building applications and trying to learn how the world
+		works.
+	</p>
+</section>

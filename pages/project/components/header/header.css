@@ -1,0 +1,11 @@
+.projectTitle {
+  padding: var(--5sp);
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectDuration {
+  padding: var(--3sp);
+}

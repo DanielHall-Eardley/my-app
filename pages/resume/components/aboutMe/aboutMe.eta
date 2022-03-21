@@ -1,0 +1,15 @@
+<section class="aboutContainer">
+  <h3>About me</h3>
+  <p spellcheck="true">
+    I am a full stack web developer focused on building applications
+    using HTML, CSS and Javascript based technologies. My most used tech
+    stack is React, Node, Express and Mongodb. I also have experience using:
+    <ul>
+      <li>Postgresql</li>
+      <li>Vue.js</li>
+      <li>React Native</li>
+      <li>WebSockets</li>
+      <li>CSS Flexbox and Grid</li>
+    </ul>
+  </p>
+</section>

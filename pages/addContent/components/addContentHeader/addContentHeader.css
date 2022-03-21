@@ -1,31 +1,24 @@
- .addContentHeader_container_51da9721-bf79-4b6f-8cf3-b0bf74c33e9f 
-{
+.addContentHeaderContainer {
   display: flex;
   padding-top: var(--4sp);
   padding-right: var(--4sp);
   padding-left: var(--4sp);
 }
 
- .addContentHeader_contentNav_891855fc-c20a-4364-8298-eda4e510bd7c 
-{
+.addContentHeaderContentNav {
   display: flex;
   align-items: center;
   height: 100%;
   padding-left: var(--4sp);
 }
 
-.addContentBtn_noScoped
-{
+.addContentBtn {
   border: solid var(--primary-clr) 1px;
   background-color: var(--white);
   color: var(--secondary-clr);
   margin-right: var(--2sp);
 }
 
-.highlight_noScoped button 
-{
+.addContentHighlightBtn {
   background-color: var(--primary-clr);
 }
-
-
-

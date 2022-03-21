@@ -1,3 +1,41 @@
 {{ layout("../../layouts/default.eta", it.pageInfo) }}
-
 {{~ includeFile("./components/header/header.eta") }}
+
+<main class="homeGrid">
+  {{~ includeFile("./components/aboutMe/aboutMe.eta") }}
+  {{~   
+    includeFile(
+      "./components/projects/projects.eta", 
+      { 
+        projects: it.content.main_project,
+        path: '../projectSummary/projectSummary.eta',
+        category: 'Projects'
+      }
+    ) 
+  }}
+  {{~ 
+    includeFile("./components/blog/blog.eta", 
+    { blogs: it.content.blog }) 
+  }}
+  {{~ 
+    includeFile("./components/ahaMoment/ahaMoment.eta", 
+    { ahaMoments: it.content.breakthru }) 
+  }}
+  {{~ 
+    includeFile("./components/dadHack/dadHack.eta", 
+    { dadHacks: it.content.dadhack }) 
+  }}
+  {{~   
+    includeFile(
+      "./components/projects/projects.eta", 
+      { 
+        projects: it.content.side_project,
+        path: '../sideProject/sideProject.eta',
+        category: "Side Hustle",
+        child: {
+          path: '../viewSideProject/viewSideProject.eta'
+        }
+      }
+    ) 
+  }}
+</main>

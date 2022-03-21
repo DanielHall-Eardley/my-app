@@ -1,0 +1,19 @@
+.projectSummaryContainer {
+  padding: var(--3sp) 0;
+}
+
+.projectSummaryTitle {
+  display: flex;
+}
+
+.projectSummaryTitle span:first-child {
+  margin-right: minmax(var(--2sp), auto);
+}
+
+.projectSummaryExplanation {
+  padding: var(--1sp) var(--5sp);
+}
+
+.projectSummaryLinks a {
+  padding-right: var(--2sp);
+}

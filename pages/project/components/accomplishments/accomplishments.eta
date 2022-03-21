@@ -1,0 +1,7 @@
+<ul class="projectHighlights">
+  {{ it.array.forEach(accomplishment => { }}
+    <li class="projectHighlight">
+      {{= accomplishment }}
+    </li>
+  {{ }) }}
+</ul>
