@@ -135,3 +135,8 @@ a {
   font-family: var(--heading-ft);
   text-decoration: none;
 }
+
+.resumeMain {
+  padding-left: var(--4sp);
+  padding-right: var(--4sp);
+}
