@@ -26,6 +26,7 @@ html {
   --body-ft: "Merriweather", serif;
   --body-light: 300;
   --body-regular: 400;
+  --btn-font-size: 1.8rem;
 
   /* spacing */
   --1sp: 0.8rem;
@@ -91,6 +92,7 @@ button {
   color: var(--secondary-clr);
   padding: var(--1sp) var(--2sp);
   border-radius: var(--rad-sm);
+  font-size: var(--btn-font-size);
   border: none;
 }
 
@@ -104,7 +106,7 @@ textarea {
 }
 
 .cardContainer {
-  box-shadow: 2px 2px 4px var(--primary-clr);
+  box-shadow: 2px 2px 8px var(--primary-clr);
   border: solid 0.4px var(--primary-clr);
   border-radius: 4px;
   padding: var(--2sp);
@@ -130,7 +132,7 @@ a {
   color: var(--primary-clr);
   border: none;
   outline: var(--primary-clr);
-  font-size: 2rem;
+  font-size: var(--btn-font-size);
   font-weight: var(--heading-light);
   font-family: var(--heading-ft);
   text-decoration: none;

@@ -1,30 +1,40 @@
-const { initDB } = require("../db/db");
-const db = initDB();
+const db = require("../db/db");
 const catchAsyncError = require("../../util/catchAsyncError");
-const throwError = require("../../util/throwError");
 const { v4: uuid } = require("uuid");
 
 /* Create param object from the request body, 
 plus any custom fields */
-function createParams(formData = {}, customFields = {}, id = uuid()) {
+function createDataObject(formData = {}, customFields = {}, id = uuid()) {
   /* formdata needs to always match the db model */
-  const paramObj = { id, ...formData, ...customFields };
-  return paramObj;
+  const data = { id, ...formData, ...customFields };
+  return data;
 }
 
-/* Create the sql query dynamically */
-function createInsertQuery(paramObj, tableName, database = db) {
-  const columnNames = Object.keys(paramObj);
-  const paramNames = columnNames.map((name) => `@${name}`);
+/* Create the sql query dynamically based on an object.
+Use the object keys for column names. 
+Convert the data from the object into an array 
+using the same object keys array so that the params are 
+ordered to match the correct column names*/
+async function insertOneRow(dataObj, tableName, database = db) {
+  const columnNames = Object.keys(dataObj);
+  const paramNames = columnNames.map((name, index) => `$${index}`);
+  const params = [];
+
+  for (let column of columnNames) {
+    const field = dataObj[column];
+    params.push(field);
+  }
+
   const query = `
   INSERT INTO ${tableName} (
     ${columnNames.toString()}
   ) VALUES (
     ${paramNames.toString()}
   );
-`;
+  `;
 
-  return database.prepare(query);
+  const result = await database.query(query, params);
+  return result;
 }
 
 function redirectOnSuccess(queryResult, redirectPath, response) {
@@ -33,41 +43,33 @@ function redirectOnSuccess(queryResult, redirectPath, response) {
   }
 }
 
-function findOneRow(employerId, table, database = db) {
+async function findOneRow(id, table, database = db) {
   const query = `
-    SELECT * FROM ${table} AS e
-    WHERE e.id = ?
+    SELECT * FROM ${table} AS t
+    WHERE t.id = $1
   `;
 
-  const sqlStatement = database.prepare(query);
-  const employer = sqlStatement.get(employerId);
-  return employer;
+  const result = await database.query(query, id);
+  return result;
 }
 
 exports.postBlog = catchAsyncError(async (req, res, next) => {
-  const customParams = {
-    url: req.file.path,
-  };
-
   const blogId = uuid();
-  const params = createParams(req.body, customParams, blogId);
-  const query = createInsertQuery(params, "blog");
-  const result = query.run(params);
+  const data = createDataObject(req.body, null, blogId);
+  const result = await insertOneRow(data, "blog");
   const redirectPath = `/view/blog/${blogId}`;
   redirectOnSuccess(result, redirectPath, res);
 });
 
 exports.postAhaMoment = catchAsyncError(async (req, res, next) => {
-  const params = createParams(req.body);
-  const query = createInsertQuery(params, "breakthru");
-  const result = query.run(params);
+  const data = createDataObject(req.body);
+  const result = await insertOneRow(data, "breakthru");
   redirectOnSuccess(result, "/", res);
 });
 
 exports.postDadHack = catchAsyncError(async (req, res, next) => {
-  const params = createParams(req.body);
-  const query = createInsertQuery(params, "dadhack");
-  const result = query.run(params);
+  const data = createDataObject(req.body);
+  const result = await insertOneRow(data, "dadhack");
   redirectOnSuccess(result, "/", res);
 });
 
@@ -86,11 +88,11 @@ function removeEmployerFields(formBody) {
 
 function convertParagraphsToArray(accomplishments) {
   /* Split paragraphs based on a special character */
-  const arrayOfParagraphs = split("<!>");
+  const arrayOfParagraphs = accomplishments.split("<!>");
   return arrayOfParagraphs;
 }
 
-exports.postMainProject = catchAsyncError(async (req, res, next) => {
+exports.postEmployer = catchAsyncError(async (req, res, next) => {
   const employerId = uuid();
   const customEmployerParams = {
     name: req.body.employerName,
@@ -98,34 +100,35 @@ exports.postMainProject = catchAsyncError(async (req, res, next) => {
     phone_number: req.body.employerPhoneNo,
   };
 
-  const employerParams = createParams(null, customEmployerParams, employerId);
-  const employerQuery = createInsertQuery(employerParams, "employer");
-  employerQuery.run(employerParams);
-  const employer = findOneRow(employerId, "main_project");
+  const employerData = createDataObject(null, customEmployerParams, employerId);
+  await insertOneRow(employerData, "employer");
+  req.employerId = employerId;
+  next();
+});
 
+exports.postMainProject = catchAsyncError(async (req, res, next) => {
   const mainProjectParams = removeEmployerFields(req.body);
   mainProjectParams.accomplishments = convertParagraphsToArray(
     mainProjectParams.accomplishments
   );
   const customMainProjectParams = {
-    employer_id: employer.id,
+    employer_id: req.employerId,
   };
 
   const projectId = uuid();
-  const params = createParams(
+  const projectData = createDataObject(
     mainProjectParams,
     customMainProjectParams,
     projectId
   );
-  const query = createInsertQuery(params, "main_project");
-  const result = query.run(params);
+
+  await insertOneRow(projectData, "main_project");
   const redirectPath = `/view/project/${projectId}`;
   redirectOnSuccess(result, redirectPath, res);
 });
 
 exports.postSideProject = catchAsyncError(async (req, res, next) => {
-  const params = createParams(req.body);
-  const query = createInsertQuery(params, "side_project");
-  const result = query.run(params);
+  const data = createDataObject(req.body);
+  const result = await insertOneRow(data, "side_project");
   redirectOnSuccess(result, "/", res);
 });

@@ -8,4 +8,8 @@
       350chevy8@gmail.com
     </a>
   </h2>
+  <nav class="resumeNav">
+    <a href="/download/resume">Download PDF</a>
+    <a href="/">Home</a>
+  </nav>
 </header>

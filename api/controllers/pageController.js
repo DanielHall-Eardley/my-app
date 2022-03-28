@@ -1,24 +1,31 @@
 const catchAsyncError = require("../../util/catchAsyncError");
 const { updateMultipleProjectDates } = require("../../util/updateProjectDates");
 const { generatePageObject } = require("../../util/generatePageObject");
-const { initDB } = require("../db/db");
-const db = initDB();
+const db = require("../db/db");
 
-function getLatestQuery(tables, database = db) {
+function createDataObject(rawDbResult, tables) {
   const data = {};
 
-  tables.forEach((table) => {
+  for (let i = 0; i < tables.length; i += 1) {
+    const tableName = tables[i];
+    const dbRows = rawDbResult[i];
+    data[tableName] = dbRows;
+  }
+
+  return data;
+}
+
+async function getAllData(tables, database = db) {
+  const promises = tables.map((table) => {
     const query = `
       SELECT * from ${table}
     `;
-    const preparedQuery = database.prepare(query);
-    const content = preparedQuery.all();
 
-    if (content) {
-      data[table] = content;
-    }
+    return database.query(query);
   });
 
+  const result = await Promise.all(promises);
+  const data = createDataObject(result, tables);
   return data;
 }
 
@@ -31,11 +38,9 @@ exports.getHomePage = catchAsyncError(async (req, res, next) => {
     "side_project",
   ];
 
-  const content = getLatestQuery(tables);
+  const content = await getAllData(tables);
   content.main_project = updateMultipleProjectDates(content.main_project);
   const data = generatePageObject("home", "Home", content);
-
-  console.log(data);
   res.render("home/home.eta", data);
 });
 

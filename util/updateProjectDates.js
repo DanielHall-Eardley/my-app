@@ -11,7 +11,7 @@ function formatDate(date) {
 
 function updateProjectObject(project) {
   const formattedStartDate = formatDate(project.start);
-  const formattedEndDate = formatDate(project.end);
+  const formattedEndDate = formatDate(project.end_project);
 
   return {
     ...project,
@@ -21,6 +21,8 @@ function updateProjectObject(project) {
 }
 
 function updateMultipleProjectDates(projects) {
+  if (!projects || projects.length === 0) return [];
+
   const updatedProjects = projects.map((project) => {
     return updateProjectObject(project);
   });

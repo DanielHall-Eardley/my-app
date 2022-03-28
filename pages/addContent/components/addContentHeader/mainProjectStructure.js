@@ -84,7 +84,7 @@ module.exports = [
         name: "input",
         attributes: {
           id: "mainProjectEnd",
-          name: "end",
+          name: "end_project",
           type: "date",
         },
       },

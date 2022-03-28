@@ -1,20 +1,27 @@
-<section class="experience">
+<section class="experienceContainer">
   <h3>Experience</h3>
-  {{ it.projects.forEach(project => { }}
-    <h4>
-      <span>{{= project.title }}</span>
-      <span>{{= project.name }}</span>
-    </h4>
-    <p>{{= project.start }} - {{= project.end }}</p>
-    <p>{{= project.explanation }}</p>
-    <ul>
-      {{~ includeFile(
-        "../../../project/components/checkArray/checkArray.eta",
-        {
-          array: project.accomplishments,
-          component: "../../../project/components/accomplishments/accomplishments.eta"
-        })
-      }}
-    </ul>
-  {{ }) }}
+  {{ if (it.projects) { }}
+    {{ it.projects.forEach(project => { }}
+      <div class="projectContainer">
+        <h4>{{= project.title }}</h4>
+        <p>{{= project.start }} - {{= project.end }}</p>
+        <p class="projectExplanation">{{= project.explanation }}</p>
+        <ul class="projectAccomplishments">
+          {{~ includeFile(
+            "../../../project/components/checkArray/checkArray.eta",
+            {
+              array: project.accomplishments,
+              component: "../../../project/components/accomplishments/accomplishments.eta"
+            })
+          }}
+        </ul>
+        <p class="projectEmployer">
+          <span>Employer:</span>
+          <span>{{= project.name }}</span>
+          <span>{{= project.address }}</span>
+          <span>{{= project.phone_number }}</span>
+        </p>
+      </div>
+    {{ }) }}
+  {{ } }}
 </section>

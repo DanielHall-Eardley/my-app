@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const eta = require("eta");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const pageRoutes = require("./routes/page");
 const addContentRoutes = require("./routes/addContent");
 const viewContentRoutes = require("./routes/viewContent");
+const downloadRoutes = require("./routes/download");
 
 const blogModel = require("./models/blog");
 const breakthruModel = require("./models/breakthru");
@@ -40,6 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(pageRoutes);
 app.use("/content", addContentRoutes);
 app.use("/view", viewContentRoutes);
+app.use("/download", downloadRoutes);
 const buildFiles = "../build";
 app.use(express.static(buildFiles));
 

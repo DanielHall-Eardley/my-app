@@ -1,6 +1,6 @@
-<section class="hobbies">
+<section class="hobbiesContainer">
   <h3>Hobbies</h3>
-  <ul>
+  <ul class="hobbiesList">
     <li>Rebuilding muscle cars</li>
     <li>Cabinet making</li>
   </ul>

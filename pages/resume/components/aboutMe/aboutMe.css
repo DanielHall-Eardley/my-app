@@ -1,0 +1,13 @@
+.aboutContainer {
+  padding-top: var(--4sp);
+}
+
+.aboutMe {
+  padding-top: var(--1sp);
+  padding-bottom: var(--1sp);
+  padding-right: 40vw;
+}
+
+.aboutMeTech {
+  padding-left: var(--3sp);
+}

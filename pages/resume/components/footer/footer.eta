@@ -1,5 +1,10 @@
- <footer id="pageFooter"> 
-  <a href="https://github.com/DanielHall-Eardley">
-    Check out my Github for code samples: https://github.com/DanielHall-Eardley
-  </a>
+ <footer class="resumeFooter"> 
+  <nav class="resumeLinks">
+    <a 
+      class="githubLink" 
+      href="https://github.com/DanielHall-Eardley"
+    >
+      Github
+    </a>
+  <nav>
 </footer>

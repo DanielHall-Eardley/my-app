@@ -7,5 +7,5 @@
     { projects: it.content.projects }) 
   }}
   {{~ includeFile("./components/hobbies/hobbies.eta") }}
-  {{~ includeFile("./components/footer/footer.eta") }}
 </main>
+{{~ includeFile("./components/footer/footer.eta") }}

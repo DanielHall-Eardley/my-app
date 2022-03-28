@@ -3,7 +3,7 @@ const mainProject = `
     id UUID NOT NULL,
     title VARCHAR(50) NOT NULL,
     start TIMESTAMP NOT NULL,
-    end TIMESTAMP NOT NULL,
+    end_project TIMESTAMP NOT NULL,
     explanation TEXT NOT NULL,
     tech_stack TEXT,
     url VARCHAR(150),

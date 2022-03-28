@@ -1,0 +1,9 @@
+.hobbiesContainer {
+  padding-top: var(--4sp);
+  padding-bottom: var(--4sp);
+}
+
+.hobbiesList {
+  padding-left: var(--3sp);
+  padding-top: var(--1sp);
+}

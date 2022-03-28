@@ -4,7 +4,7 @@
 	<nav>
 		<ul class="addContentHeaderContentNav">
 			<li>
-				<a class="addBlog addContentBtn addContentHighlightBtn" href="/create/content">
+				<a class="addBlog addContentBtn addContentHighlightBtn" href="/content/create">
 					Blog
 				</a>
 			</li>

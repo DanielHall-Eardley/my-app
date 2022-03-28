@@ -1,8 +1,7 @@
 <form
-	class="formContainer"
+	class="blogContainer"
 	action="/content/create/blog"
-	method="post"
-	enctype="multipart/form-data">
+	method="post">
 	<div class="inputContainer" >
 		<label for="blogTitle">Enter a title</label>
 		<input id="blogTitle" name="title" type="text">
@@ -17,7 +16,18 @@
 	</div>
 	<div class="inputContainer">
 		<label for="blogFile">Upload the file</label>
-		<input id="blogFile" name="blog" type="file">
+		<input 
+			id="blogFile" 
+			name="blog" 
+			value=null
+			type="file"
+			class="uploadBlog"
+			data-interaction="input"
+			data-event-type="input"
+			data-name="blog"
+		>
 	</div>
-	<button>Submit</button>
+	<button>
+		Submit
+	</button>
 </form>

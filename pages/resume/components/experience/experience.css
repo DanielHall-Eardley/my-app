@@ -1,0 +1,14 @@
+.experienceContainer {
+  padding-top: var(--4sp);
+}
+
+.projectContainer {
+  padding-top: var(--1sp);
+  padding-left: var(--3sp);
+}
+
+.projectExplanation,
+.projectAccomplishments,
+.projectEmployer {
+  padding-top: var(--1sp);
+}

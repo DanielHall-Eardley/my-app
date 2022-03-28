@@ -14,6 +14,16 @@
 </head>
   <body>
     {{~ it.body }}
+    {{ if (it.pageName === "addContent") { }}
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" type="module">
+        const supabase = createClient(
+          "https://dihrbzcrqzorpnqtimae.supabase.co",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpaHJiemNycXpvcnBucXRpbWFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDMwMjYsImV4cCI6MTk2MzYxOTAyNn0.fM_sQdJdrQKbJzvZMDIjZ6UdU3i_AMSAucSHsxRNaL4"
+        );
+
+        console.log(supabase)
+      </script>
+    {{ } }}
     <script src="/pages/{{= it.pageName}}/{{= it.pageName}}.js"></script>
   </body>
 </html>

@@ -22,3 +22,9 @@
 .addContentHighlightBtn {
   background-color: var(--primary-clr);
 }
+
+.addBlog {
+  color: var(--secondary-clr);
+  padding: var(--1sp) var(--2sp);
+  border-radius: var(--rad-sm);
+}

@@ -1,16 +1,22 @@
-const Database = require('better-sqlite3');
-const db = new Database('./data.db', { verbose: console.log });
+const { Pool } = require("pg");
+const password = process.env.DB_PASSWORD;
+const connectionString = `postgresql://postgres:${password}@db.dihrbzcrqzorpnqtimae.supabase.co:5432/postgres`;
+const pool = new Pool({ connectionString });
 
 const databaseMethods = {
-  initTables(tables) {
-    tables.forEach(table => {
-      const createTables = db.prepare(table);
-      createTables.run()
-    })
+  async initTables(tables) {
+    tables.forEach((table) => {
+      pool.query(table);
+    });
   },
-  initDB() {
-    return db;
-  }
-}
+  async query(sql, params) {
+    const result = await pool.query(sql, params);
+    return result.rows;
+  },
+  async queryOne(sql, params) {
+    const result = await pool.query(sql, params);
+    return result.rows[0];
+  },
+};
 
 module.exports = databaseMethods;

@@ -1,4 +1,6 @@
 .resumeHeader {
+  display: grid;
+  grid-template-columns: 1fr max-content;
   background-color: var(--secondary-clr);
   color: var(--primary-clr);
   padding: var(--4sp);
@@ -8,6 +10,19 @@
   padding-bottom: var(--2sp);
 }
 
+.resumeContact {
+  grid-column: 1 / 2;
+}
+
 .resumeContact a {
   padding-right: var(--3sp);
+}
+
+.resumeNav {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.resumeNav a {
+  padding-left: var(--3sp);
 }
