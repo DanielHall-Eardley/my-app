@@ -22,9 +22,6 @@
 			value=null
 			type="file"
 			class="uploadBlog"
-			data-interaction="input"
-			data-event-type="input"
-			data-name="blog"
 		>
 	</div>
 	<button>

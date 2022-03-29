@@ -1,3 +1,4 @@
+//<!>
 import input_aboutMe from './components/aboutMe/input.js' 
 import submit_aboutMe from './components/aboutMe/submit.js' 
 import input_ahaMoment from './components/ahaMoment/input.js' 
@@ -16,21 +17,23 @@ import input_sideProject from './components/sideProject/input.js'
 import submit_sideProject from './components/sideProject/submit.js' 
 import input_viewSideProject from './components/viewSideProject/input.js' 
 import submit_viewSideProject from './components/viewSideProject/submit.js' 
- 
- const interactions = [
+
+const interactions = [
     input_aboutMe,submit_aboutMe,input_ahaMoment,submit_ahaMoment,input_blog,submit_blog,input_dadHack,submit_dadHack,input_header,submit_header,input_projectSummary,submit_projectSummary,input_projects,submit_projects,input_sideProject,submit_sideProject,input_viewSideProject,submit_viewSideProject
-  ] 
- 
+  ]
+//<!>
+
+
 /* Convert multiple base objects containing objects
 into one array of objects as long as the base object 
 are not empty */
-function convertObjectsToArray (arrayOfObjects) {
+function convertObjectsToArray(arrayOfObjects) {
   let reducedArray = [];
 
-  for(let interactionObj of arrayOfObjects) {
+  for (let interactionObj of arrayOfObjects) {
     const objValues = Object.values(interactionObj);
     if (objValues && objValues.length > 0) {
-      reducedArray = [...reducedArray, ...objValues]
+      reducedArray = [...reducedArray, ...objValues];
     }
   }
 
@@ -39,16 +42,15 @@ function convertObjectsToArray (arrayOfObjects) {
 
 /* Find a html element by id, add an event listener, 
 event type and callback function */
-function addInteractionToHTML (interactionArray) {
-  interactionArray.forEach(interaction => {
-    const className = '.' + interaction.elementId
+function addInteractionToHTML(interactionArray) {
+  interactionArray.forEach((interaction) => {
+    const className = "." + interaction.elementId;
     const element = document.querySelector(className);
     element.addEventListener(interaction.eventType, interaction.fn);
   });
 }
 
-
-function attachEventListeners (interactions=[]) {
+function attachEventListeners(interactions = []) {
   const interactionArray = convertObjectsToArray(interactions);
   addInteractionToHTML(interactionArray);
 }
