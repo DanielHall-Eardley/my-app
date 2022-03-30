@@ -40,6 +40,6 @@ exports.getResume = catchAsyncError(async (req, res, next) => {
   const projects = await db.query(query);
   const updatedProjects = updateMultipleProjectDates(projects);
   const content = { projects: updatedProjects };
-  const data = generatePageObject("resume", "Daniel's Resume", content);
+  const data = generatePageObject("resume", "Daniel's Resume", null, content);
   res.render("resume/resume.eta", data);
 });

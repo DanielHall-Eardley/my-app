@@ -40,11 +40,11 @@ exports.getHomePage = catchAsyncError(async (req, res, next) => {
 
   const content = await getAllData(tables);
   content.main_project = updateMultipleProjectDates(content.main_project);
-  const data = generatePageObject("home", "Home", content);
+  const data = generatePageObject("home", "Home", req.dbAuth, content);
   res.render("home/home.eta", data);
 });
 
 exports.getAddContentPage = catchAsyncError(async (req, res, next) => {
-  const data = generatePageObject("addContent", "Add Content");
+  const data = generatePageObject("addContent", "Add Content", req.dbAuth);
   res.render("addContent/addContent.eta", data);
 });

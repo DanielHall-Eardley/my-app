@@ -3,7 +3,6 @@ const app = express();
 const path = require("path");
 const eta = require("eta");
 const dotenv = require("dotenv");
-
 dotenv.config();
 
 const pageRoutes = require("./routes/page");
@@ -30,6 +29,9 @@ const tableArray = [
 
 // db.initTables(tableArray);
 
+const { createDBUser, signInDBUser } = require("../util/supabaseDB");
+// createDBUser();
+
 eta.configure({
   tags: ["{{", "}}"],
 });
@@ -37,7 +39,6 @@ eta.configure({
 app.engine("eta", eta.renderFile);
 app.set("view engine", "eta");
 app.set("views", "../pages");
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
