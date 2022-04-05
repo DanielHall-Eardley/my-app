@@ -1,0 +1,7 @@
+<main>
+  <h1>An Error Occurred</h1>
+  {{ if (it.content) { }}
+    <p>Message: {{= it.content.message }}</p>
+    <p>Code: {{= it.content.status }}</p>
+  {{ } }}
+</main>

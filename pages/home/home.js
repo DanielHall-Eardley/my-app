@@ -15,13 +15,24 @@ import input_projects from './components/projects/input.js'
 import submit_projects from './components/projects/submit.js' 
 import input_sideProject from './components/sideProject/input.js' 
 import submit_sideProject from './components/sideProject/submit.js' 
+import input_viewAllLink from './components/viewAllLink/input.js' 
+import submit_viewAllLink from './components/viewAllLink/submit.js' 
 import input_viewSideProject from './components/viewSideProject/input.js' 
 import submit_viewSideProject from './components/viewSideProject/submit.js' 
 
 const interactions = [
-    input_aboutMe,submit_aboutMe,input_ahaMoment,submit_ahaMoment,input_blog,submit_blog,input_dadHack,submit_dadHack,input_header,submit_header,input_projectSummary,submit_projectSummary,input_projects,submit_projects,input_sideProject,submit_sideProject,input_viewSideProject,submit_viewSideProject
+    input_aboutMe,submit_aboutMe,input_ahaMoment,submit_ahaMoment,input_blog,submit_blog,input_dadHack,submit_dadHack,input_header,submit_header,input_projectSummary,submit_projectSummary,input_projects,submit_projects,input_sideProject,submit_sideProject,input_viewAllLink,submit_viewAllLink,input_viewSideProject,submit_viewSideProject
   ]
 //<!>
+
+
+
+
+
+
+
+
+
 
 
 

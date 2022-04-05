@@ -1,11 +1,13 @@
-const router = require('express').Router()
-const { 
+const router = require("express").Router();
+const {
   getHomePage,
-  getAddContentPage
-} = require('../controllers/pageController');
+  getAddContentPage,
+  getSigninPage,
+} = require("../controllers/pageController");
+const { authorize } = require("../controllers/authController");
 
-router.get('/', getHomePage);
+router.get("/", getHomePage);
+router.get("/auth/signin", getSigninPage);
+router.get("/content/create", authorize, getAddContentPage);
 
-router.get('/content/create', getAddContentPage);
-
-module.exports = router
+module.exports = router;

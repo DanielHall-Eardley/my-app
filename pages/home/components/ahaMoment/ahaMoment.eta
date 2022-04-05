@@ -1,5 +1,5 @@
 <section class="cardContainer ahaMomentContainer">
-  <h2>Aha Moments</h2>
+  <h2 class="summaryHeader">Aha Moments</h2>
   <ul class="ahaMomentList">
     {{ it.ahaMoments.forEach(moment => { }}
       <li class="ahaMoment">

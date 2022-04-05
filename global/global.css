@@ -142,3 +142,7 @@ a {
   padding-left: var(--4sp);
   padding-right: var(--4sp);
 }
+
+.summaryHeading {
+  padding-bottom: var(--3sp);
+}

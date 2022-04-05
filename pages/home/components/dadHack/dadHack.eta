@@ -1,5 +1,5 @@
 <section class="cardContainer dadHackContainer">
-  <h2>Dad Hacks</h2>
+  <h2 class="summaryHeader">Dad Hacks</h2>
   <ul class="dadHacksList">
     {{ it.dadHacks.forEach(hack => { }}
       <li class="ahaMoment">

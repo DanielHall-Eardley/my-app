@@ -10,34 +10,11 @@ const interactions = [
 //<!>
 
 
-import { createClient } from "@supabase/supabase-js";
-import { v4 as uuid } from "uuid";
 
-const supabase = createClient(
-  "https://dihrbzcrqzorpnqtimae.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpaHJiemNycXpvcnBucXRpbWFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDMwMjYsImV4cCI6MTk2MzYxOTAyNn0.fM_sQdJdrQKbJzvZMDIjZ6UdU3i_AMSAucSHsxRNaL4"
-);
 
-const uploadBlog = {
-  uploadBlog: {
-    interactionType: "input",
-    eventType: "input",
-    name: "blog",
-    elementId: "uploadBlog",
-    fn: function anonymous(event) {
-      const blogFile = event.target.files[0];
-      const blogName = `${uuid()}_${blogFile.name}`;
-      supabase.storage
-        .from("blogs")
-        .upload(`/${blogName}`, blogFile)
-        .then((response) => {
-          console.log(response);
-        });
-    },
-  },
-};
 
-interactions.push(uploadBlog);
+
+
 
 /* Convert multiple base objects containing objects
 into one array of objects as long as the base object 

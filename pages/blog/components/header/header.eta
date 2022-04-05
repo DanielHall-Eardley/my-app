@@ -1,0 +1,10 @@
+<header class="blogHeader">
+  <h1 class="blogTitle">
+    <span>{{= it.title }}</span>
+    <a href="/">Home</a>
+  </h1>
+  <h2 class="blogInfo">
+    <span>{{= it.readtime }} minute read</span>
+    <span>{{= it.date }}</span>
+  </h2>
+</header>

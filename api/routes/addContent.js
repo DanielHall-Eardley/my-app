@@ -7,7 +7,9 @@ const {
   postEmployer,
   postSideProject,
 } = require("../controllers/addContentController");
+const { authorize } = require("../controllers/authController");
 
+// router.use(authorize);
 router.post("/create/blog", postBlog);
 router.post("/create/ahamoment", postAhaMoment);
 router.post("/create/dadhack", postDadHack);

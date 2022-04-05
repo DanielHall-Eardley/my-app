@@ -1,6 +1,7 @@
 const db = require("../db/db");
 const catchAsyncError = require("../../util/catchAsyncError");
 const { v4: uuid } = require("uuid");
+const { uploadBlog } = require("../../util/supabaseDB");
 
 /* Create param object from the request body, 
 plus any custom fields */
@@ -17,7 +18,7 @@ using the same object keys array so that the params are
 ordered to match the correct column names*/
 async function insertOneRow(dataObj, tableName, database = db) {
   const columnNames = Object.keys(dataObj);
-  const paramNames = columnNames.map((name, index) => `$${index}`);
+  const paramNames = columnNames.map((name, index) => `$${index + 1}`);
   const params = [];
 
   for (let column of columnNames) {
@@ -32,7 +33,7 @@ async function insertOneRow(dataObj, tableName, database = db) {
     ${paramNames.toString()}
   );
   `;
-
+  console.log(query);
   const result = await database.query(query, params);
   return result;
 }
@@ -54,17 +55,22 @@ async function findOneRow(id, table, database = db) {
 }
 
 exports.postBlog = catchAsyncError(async (req, res, next) => {
+  const blogUrl = await uploadBlog(req.files.blog);
+  if (!blogUrl) {
+    throwError(`Upload ${req.files.blog.name} failed.`);
+  }
+
+  const customParams = { url: blogUrl };
   const blogId = uuid();
-  const data = createDataObject(req.body, null, blogId);
+  const data = createDataObject(req.body, customParams, blogId);
   const result = await insertOneRow(data, "blog");
-  const redirectPath = `/view/blog/${blogId}`;
-  redirectOnSuccess(result, redirectPath, res);
+  console.log(result);
+  res.redirect(`/view/blog/${blogId}`);
 });
 
 exports.postAhaMoment = catchAsyncError(async (req, res, next) => {
   const data = createDataObject(req.body);
   const result = await insertOneRow(data, "breakthru");
-  redirectOnSuccess(result, "/", res);
 });
 
 exports.postDadHack = catchAsyncError(async (req, res, next) => {

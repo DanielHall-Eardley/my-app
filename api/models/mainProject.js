@@ -1,6 +1,6 @@
 const mainProject = `
   CREATE TABLE IF NOT EXISTS main_project (
-    id UUID NOT NULL,
+    id UUID PRIMARY KEY NOT NULL,
     title VARCHAR(50) NOT NULL,
     start TIMESTAMP NOT NULL,
     end_project TIMESTAMP NOT NULL,

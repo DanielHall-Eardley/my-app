@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const { generatePageObject } = require("../util/generatePageObject");
 const eta = require("eta");
+const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -9,6 +11,7 @@ const pageRoutes = require("./routes/page");
 const addContentRoutes = require("./routes/addContent");
 const viewContentRoutes = require("./routes/viewContent");
 const downloadRoutes = require("./routes/download");
+const authRoutes = require("./routes/authRoutes");
 
 const blogModel = require("./models/blog");
 const breakthruModel = require("./models/breakthru");
@@ -29,8 +32,10 @@ const tableArray = [
 
 // db.initTables(tableArray);
 
-const { createDBUser, signInDBUser } = require("../util/supabaseDB");
-// createDBUser();
+// const { createDBUser } = require("../util/supabaseDB");
+// createDBUser().then((res) => {
+//   console.log(res);
+// });
 
 eta.configure({
   tags: ["{{", "}}"],
@@ -39,6 +44,7 @@ eta.configure({
 app.engine("eta", eta.renderFile);
 app.set("view engine", "eta");
 app.set("views", "../pages");
+app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -46,11 +52,18 @@ app.use(pageRoutes);
 app.use("/content", addContentRoutes);
 app.use("/view", viewContentRoutes);
 app.use("/download", downloadRoutes);
+app.use("/auth", authRoutes);
 const buildFiles = "../build";
 app.use(express.static(buildFiles));
 
 app.use((error, req, res, next) => {
   console.log(error);
+  const errorObject = {
+    message: error.message,
+    status: error.status,
+  };
+  const data = generatePageObject("error", "Error", errorObject);
+  res.render("error/error.eta", data);
 });
 
 const PORT = process.env.PORT ?? 3000;

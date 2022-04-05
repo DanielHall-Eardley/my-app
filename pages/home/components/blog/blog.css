@@ -1,3 +1,20 @@
 .blogContainer {
   grid-column: 1 / 4;
 }
+
+.blogSummary {
+  padding-bottom: var(--2sp);
+}
+
+.blogInfo {
+  display: flex;
+  padding-top: var(--1sp);
+}
+
+.blogInfo a {
+  margin-left: auto;
+}
+
+.blogInfo span {
+  padding-left: var(--2sp);
+}

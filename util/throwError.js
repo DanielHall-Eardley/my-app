@@ -3,3 +3,5 @@ function throwError(message = "no error message", status = 500) {
   error.status = status;
   throw error;
 }
+
+module.exports = throwError;

@@ -1,8 +1,18 @@
 const catchAsyncError = require("../../util/catchAsyncError");
-const { updateMultipleProjectDates } = require("../../util/updateProjectDates");
+const {
+  updateMultipleDates,
+  updateProjectObject,
+  updateBlogDate,
+} = require("../../util/updateDates");
 const { generatePageObject } = require("../../util/generatePageObject");
 const db = require("../db/db");
 
+/* 
+  Create an object with the following structure
+  {
+    [tableName]: [array of rows]
+  }
+*/
 function createDataObject(rawDbResult, tables) {
   const data = {};
 
@@ -39,12 +49,21 @@ exports.getHomePage = catchAsyncError(async (req, res, next) => {
   ];
 
   const content = await getAllData(tables);
-  content.main_project = updateMultipleProjectDates(content.main_project);
-  const data = generatePageObject("home", "Home", req.dbAuth, content);
+  content.main_project = updateMultipleDates(
+    content.main_project,
+    updateProjectObject
+  );
+  content.blog = updateMultipleDates(content.blog, updateBlogDate);
+  const data = generatePageObject("home", "Home", content);
   res.render("home/home.eta", data);
 });
 
 exports.getAddContentPage = catchAsyncError(async (req, res, next) => {
-  const data = generatePageObject("addContent", "Add Content", req.dbAuth);
+  const data = generatePageObject("addContent", "Add Content");
   res.render("addContent/addContent.eta", data);
+});
+
+exports.getSigninPage = catchAsyncError(async (req, res, next) => {
+  const data = generatePageObject("signIn", "Sign In");
+  res.render("signIn/signIn.eta", data);
 });
