@@ -16,6 +16,9 @@ const interactions = [
 
 
 
+
+
+
 /* Convert multiple base objects containing objects
 into one array of objects as long as the base object 
 are not empty */

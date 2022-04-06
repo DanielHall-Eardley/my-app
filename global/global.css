@@ -121,11 +121,6 @@ textarea {
   gap: var(--3sp);
 }
 
-.viewAllLink {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .btnLink,
 a {
   background-color: transparent;
@@ -143,6 +138,9 @@ a {
   padding-right: var(--4sp);
 }
 
-.summaryHeading {
+.summaryHeader {
   padding-bottom: var(--3sp);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

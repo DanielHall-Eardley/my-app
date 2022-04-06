@@ -1,5 +1,5 @@
 <section class="cardContainer blogContainer">
-  <h2 class="summaryHeading">Blogs</h2>
+  <h2 class="summaryHeader">Blogs</h2>
   <ul class="blogList">
     {{ it.blogs.forEach(blog => { }}
       <li class="blogSummary">

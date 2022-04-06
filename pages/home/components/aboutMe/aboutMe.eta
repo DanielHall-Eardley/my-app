@@ -1,5 +1,5 @@
 <section class="aboutMeContainer cardContainer">
-	<h2 class="summaryHeading">About Me</h2>
+	<h2 class="summaryHeader">About Me</h2>
 	<p>
 		I am a tenacious full stack web developer that enjoys
 		building applications and trying to learn how the world

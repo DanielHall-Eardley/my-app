@@ -1,5 +1,14 @@
 <section class="cardContainer ahaMomentContainer">
-  <h2 class="summaryHeader">Aha Moments</h2>
+  <h2 class="summaryHeader">
+    Aha Moments
+    {{~ includeFile(
+    "../viewAllLink/viewAllLink.eta", 
+    { 
+      count: it.ahaMoments.length,
+      path: "/view/ahamoments"
+    }
+  ) }}
+  </h2>
   <ul class="ahaMomentList">
     {{ it.ahaMoments.forEach(moment => { }}
       <li class="ahaMoment">
@@ -16,9 +25,4 @@
       </li>
     {{ }) }}
   </ul>
-  <div class="viewAllLink">
-    <a href="/view/ahamoments">
-      View All
-    </a>
-  </div>
 </section>
