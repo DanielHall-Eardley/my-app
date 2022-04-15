@@ -13,10 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 </head>
   <body>
-    {{ if (it.dbToken) { }} 
-      <input type="hidden" value="{{= it.dbToken }}" id="accessDBToken"/>
-    {{ } }}
     {{~ it.body }}
     <script src="/pages/{{= it.pageName}}/{{= it.pageName}}.js"></script>
   </body>
+  {{~ includeFile("../pages/home/components/footer/footer.eta") }}
 </html>

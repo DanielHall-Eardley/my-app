@@ -3,13 +3,10 @@
 
 <main class="homeGrid">
   {{~ includeFile("./components/aboutMe/aboutMe.eta") }}
-  {{~   
-    includeFile(
-      "./components/projects/projects.eta", 
+  {{~ includeFile(
+      "./components/mainProject/mainProject.eta", 
       { 
-        projects: it.content.main_project,
-        path: '../projectSummary/projectSummary.eta',
-        category: 'Projects'
+        main_projects: it.content.main_project,
       }
     ) 
   }}
@@ -27,15 +24,7 @@
   }}
   {{~   
     includeFile(
-      "./components/projects/projects.eta", 
-      { 
-        projects: it.content.side_project,
-        path: '../sideProject/sideProject.eta',
-        category: "Side Hustle",
-        child: {
-          path: '../viewSideProject/viewSideProject.eta'
-        }
-      }
-    ) 
+      "./components/sideProject/sideProject.eta", 
+      { side_projects: it.content.side_project }) 
   }}
 </main>

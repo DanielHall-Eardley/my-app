@@ -55,6 +55,7 @@ exports.getHomePage = catchAsyncError(async (req, res, next) => {
   );
   content.blog = updateMultipleDates(content.blog, updateBlogDate);
   const data = generatePageObject("home", "Home", content);
+  console.log(data);
   res.render("home/home.eta", data);
 });
 

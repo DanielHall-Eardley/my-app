@@ -2,9 +2,10 @@
 @import './components/ahaMoment/ahaMoment.css';
 @import './components/blog/blog.css';
 @import './components/dadHack/dadHack.css';
+@import './components/footer/footer.css';
 @import './components/header/header.css';
+@import './components/mainProject/mainProject.css';
 @import './components/projectSummary/projectSummary.css';
-@import './components/projects/projects.css';
 @import './components/sideProject/sideProject.css';
+@import './components/sideProjectSummary/sideProjectSummary.css';
 @import './components/viewAllLink/viewAllLink.css';
-@import './components/viewSideProject/viewSideProject.css';

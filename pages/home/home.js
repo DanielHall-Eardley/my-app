@@ -7,23 +7,37 @@ import input_blog from './components/blog/input.js'
 import submit_blog from './components/blog/submit.js' 
 import input_dadHack from './components/dadHack/input.js' 
 import submit_dadHack from './components/dadHack/submit.js' 
+import input_footer from './components/footer/input.js' 
+import submit_footer from './components/footer/submit.js' 
 import input_header from './components/header/input.js' 
 import submit_header from './components/header/submit.js' 
+import input_mainProject from './components/mainProject/input.js' 
+import submit_mainProject from './components/mainProject/submit.js' 
 import input_projectSummary from './components/projectSummary/input.js' 
 import submit_projectSummary from './components/projectSummary/submit.js' 
-import input_projects from './components/projects/input.js' 
-import submit_projects from './components/projects/submit.js' 
 import input_sideProject from './components/sideProject/input.js' 
 import submit_sideProject from './components/sideProject/submit.js' 
+import input_sideProjectSummary from './components/sideProjectSummary/input.js' 
+import submit_sideProjectSummary from './components/sideProjectSummary/submit.js' 
 import input_viewAllLink from './components/viewAllLink/input.js' 
 import submit_viewAllLink from './components/viewAllLink/submit.js' 
-import input_viewSideProject from './components/viewSideProject/input.js' 
-import submit_viewSideProject from './components/viewSideProject/submit.js' 
 
 const interactions = [
-    input_aboutMe,submit_aboutMe,input_ahaMoment,submit_ahaMoment,input_blog,submit_blog,input_dadHack,submit_dadHack,input_header,submit_header,input_projectSummary,submit_projectSummary,input_projects,submit_projects,input_sideProject,submit_sideProject,input_viewAllLink,submit_viewAllLink,input_viewSideProject,submit_viewSideProject
+    input_aboutMe,submit_aboutMe,input_ahaMoment,submit_ahaMoment,input_blog,submit_blog,input_dadHack,submit_dadHack,input_footer,submit_footer,input_header,submit_header,input_mainProject,submit_mainProject,input_projectSummary,submit_projectSummary,input_sideProject,submit_sideProject,input_sideProjectSummary,submit_sideProjectSummary,input_viewAllLink,submit_viewAllLink
   ]
 //<!>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

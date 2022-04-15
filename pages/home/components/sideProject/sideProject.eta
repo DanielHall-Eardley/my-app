@@ -1,19 +1,17 @@
-<li class="projectSummaryContainer">
-	<h3 class="projectSummary">
-		<span>{{= it.title }}</span>
-	</h3>
-	<p class="projectSummaryExplanation"> 
-		{{= it.explanation }}
-	</p>
-	<p class="sideProjectTech">
-		{{= it.tech_stack }}
-	</p>
-		<div class="projectSummaryLinks" > 
-			{{ if (it.url) { }} 
-				<a href="{{= it.url}}">Website</a>
-			{{ } }}
-			{{ if (it.github) { }} 
-				<a href="{{= it.github}}">Github</a>
-			{{ } }}
-		</div>
-	</li>
+<section class="sideProjectContainer cardContainer" >
+<h2 class="summaryHeader">
+	Side Hustle
+    {{~ includeFile(
+    "../viewAllLink/viewAllLink.eta", 
+    { 
+      count: it.side_projects.length,
+      path: "/view/side-projects"
+    }
+  ) }}
+</h2>
+	<ul class="sideProjectList">
+		{{ it.side_projects.forEach(function(project) { }} 
+			{{~ includeFile("../sideProjectSummary/sideProjectSummary.eta", project) }} 
+		{{ }) }}
+	</ul>
+</section>

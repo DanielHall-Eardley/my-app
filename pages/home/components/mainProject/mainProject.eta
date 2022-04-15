@@ -1,0 +1,8 @@
+<section class="mainProjectContainer cardContainer" >
+<h2 class="summaryHeader">Experience</h2>
+	<ul class="mainProjectList">
+		{{ it.main_projects.forEach(function(project) { }} 
+			{{~ includeFile("../projectSummary/projectSummary.eta", project) }} 
+		{{ }) }}
+	</ul>
+</section>
