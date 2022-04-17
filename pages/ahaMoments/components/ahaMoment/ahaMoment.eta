@@ -1,0 +1,12 @@
+<li class="ahaMoment">
+  <h3>
+    <span>{{= it.title }}</span>
+    <span>{{= it.date }}</span>
+    {{ for (let i = 0; i <= it.rating; i += 1) { }}
+      <span class="ahaMomentRating">&#128293;</span>
+    {{ } }}
+  </h3>
+  <p>
+    {{= it.content }}
+  </p>
+</li>
