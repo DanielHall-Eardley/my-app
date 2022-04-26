@@ -18,7 +18,7 @@ using the same object keys array so that the params are
 ordered to match the correct column names*/
 async function insertOneRow(dataObj, tableName, database = db) {
   const columnNames = Object.keys(dataObj);
-  const paramNames = columnNames.map((name, index) => `$${index + 1}`);
+  const paramNumbers = columnNames.map((name, index) => `$${index + 1}`);
   const params = [];
 
   for (let column of columnNames) {
@@ -30,11 +30,11 @@ async function insertOneRow(dataObj, tableName, database = db) {
   INSERT INTO ${tableName} (
     ${columnNames.toString()}
   ) VALUES (
-    ${paramNames.toString()}
+    ${paramNumbers.toString()}
   );
   `;
-  console.log(query);
-  const result = await database.query(query, params);
+
+  const result = await database.insert(query, params);
   return result;
 }
 
@@ -65,17 +65,21 @@ exports.postBlog = catchAsyncError(async (req, res, next) => {
   const data = createDataObject(req.body, customParams, blogId);
   const result = await insertOneRow(data, "blog");
   console.log(result);
-  res.redirect(`/view/blog/${blogId}`);
+  const redirectPath = `/view/blog/${blogId}`;
+  redirectOnSuccess(result, redirectPath, res);
 });
 
 exports.postAhaMoment = catchAsyncError(async (req, res, next) => {
   const data = createDataObject(req.body);
   const result = await insertOneRow(data, "breakthru");
+  console.log(result);
+  redirectOnSuccess(result, "/", res);
 });
 
 exports.postDadHack = catchAsyncError(async (req, res, next) => {
   const data = createDataObject(req.body);
   const result = await insertOneRow(data, "dadhack");
+  console.log(result);
   redirectOnSuccess(result, "/", res);
 });
 
@@ -134,7 +138,11 @@ exports.postMainProject = catchAsyncError(async (req, res, next) => {
 });
 
 exports.postSideProject = catchAsyncError(async (req, res, next) => {
-  const data = createDataObject(req.body);
+  const techArray = req.body.tech_stack.split(",");
+  const customData = {
+    tech_stack: techArray,
+  };
+  const data = createDataObject(req.body, customData);
   const result = await insertOneRow(data, "side_project");
   redirectOnSuccess(result, "/", res);
 });

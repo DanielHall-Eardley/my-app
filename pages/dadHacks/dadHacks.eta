@@ -1,1 +1,8 @@
-<main></main>
+{{ layout("../../layouts/default.eta", it.pageInfo) }}
+{{~  includeFile("./components/header/header.eta") }}
+<main class="contentPadding">
+  {{~ includeFile(
+    "./components/list/list.eta",
+    { dadHacks: it.content.dadHacks }
+  ) }}
+</main>

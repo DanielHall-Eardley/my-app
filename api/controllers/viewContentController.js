@@ -9,6 +9,7 @@ const {
   updateProjectObject,
   updateMultipleDates,
   updateBlogDate,
+  updateDate,
 } = require("../../util/updateDates");
 const { generatePageObject } = require("../../util/generatePageObject");
 const { downloadBlog } = require("../../util/supabaseDB");
@@ -56,9 +57,21 @@ exports.getBlog = catchAsyncError(async (req, res, next) => {
   res.render("blog/blog.eta", data);
 });
 
-exports.getAhaMoments = catchAsyncError((req, res, next) => {});
+exports.getAhaMoments = catchAsyncError(async (req, res, next) => {
+  const result = await db.getOneTable("breakthru");
+  const ahaMomentData = updateMultipleDates(result, updateDate);
+  const ahaMomentObject = { ahaMoments: ahaMomentData };
+  const data = generatePageObject("ahaMoments", "Aha Moments", ahaMomentObject);
+  res.render("ahaMoments/ahaMoments.eta", data);
+});
 
-exports.getDadHacks = catchAsyncError((req, res, next) => {});
+exports.getDadHacks = catchAsyncError(async (req, res, next) => {
+  const result = await db.getOneTable("dadhack");
+  const dadHackObject = { dadHacks: result };
+  const data = generatePageObject("dadHacks", "Dad Hacks", dadHackObject);
+  console.log(data);
+  res.render("dadHacks/dadHacks.eta", data);
+});
 
 exports.getSideProjects = catchAsyncError((req, res, next) => {});
 

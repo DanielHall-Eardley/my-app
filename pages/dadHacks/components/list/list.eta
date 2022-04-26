@@ -1,0 +1,13 @@
+<ul class="dadHacksList">
+  {{ it.dadHacks.forEach(hack => { }}
+    <li class="dadHack">
+      <h3 class="dadHackTitle">
+        <span>{{= hack.title }}</span> |
+        <span class="dadHackCategory">
+          {{= hack.category }}
+        </span>
+      </h3>
+      <p class="dadHackContent">{{= hack.content }}</p>
+    </li>
+  {{ }) }}
+</ul>

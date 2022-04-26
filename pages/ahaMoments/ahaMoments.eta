@@ -1,14 +1,8 @@
-<main>
-  <header>
-    <h1>Aha Moments</h1>
-    <h2>These are those times when something clicks into place and gain a new understanding</h2>
-  </header>
-  <ul class="ahaMomentList">
-    {{ it.ahaMoments.forEach(moment => { }}
-      {{~ includeFile(
-        "./components/ahaMoment/ahaMoment.eta",
-        { moment }
-      ) }}
-    {{ }) }}
-  </ul>
+{{ layout("../../layouts/default.eta", it.pageInfo) }}
+{{~ includeFile("./components/header/header.eta") }}
+<main class="contentPadding">
+  {{~ includeFile(
+    "./components/list/list.eta",
+    { ahaMoments: it.content.ahaMoments }
+  )}}
 </main>

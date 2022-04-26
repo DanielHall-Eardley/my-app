@@ -1,6 +1,6 @@
-{{ if (it.count === 0) { }}
-  <div class="viewAllLink">
-    <a href="{{= it.path }}">
+{{ if (it.count > 0) { }}
+  <div>
+    <a class="viewAllLink" href="{{= it.path }}">
       View All
     </a>
   </div>

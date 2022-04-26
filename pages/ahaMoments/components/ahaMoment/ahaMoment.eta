@@ -1,11 +1,14 @@
-<li class="ahaMoment">
-  <h3>
+<li class="ahaMomentContainer">
+  <h3 class="ahaMomentTitle">
     <span>{{= it.title }}</span>
-    <span>{{= it.date }}</span>
-    {{ for (let i = 0; i <= it.rating; i += 1) { }}
-      <span class="ahaMomentRating">&#128293;</span>
-    {{ } }}
+    <span>Date: {{= it.date }}</span>
   </h3>
+  <p class="ahaMomentRating">
+    Rating: 
+    {{ for (let i = 0; i <= it.mind_blown_rating; i += 1) { }}
+      <span >&#128293;</span>
+    {{ } }}
+  </p>
   <p>
     {{= it.content }}
   </p>

@@ -4,13 +4,13 @@ function createDateString(date, options) {
   return formattedDate;
 }
 
-function formatDate(date) {
-  const options = {
-    year: "numeric",
-    month: "long",
-  };
+const options = {
+  year: "numeric",
+  month: "long",
+};
 
-  return createDateString(date, options);
+function formatDate(date, opt = options) {
+  return createDateString(date, opt);
 }
 
 function formatBlogDate(date) {
@@ -28,6 +28,15 @@ function updateBlogDate(blog) {
 
   return {
     ...blog,
+    date: formattedDate,
+  };
+}
+
+function updateDate(obj) {
+  const formattedDate = formatBlogDate(obj.date);
+
+  return {
+    ...obj,
     date: formattedDate,
   };
 }
@@ -58,4 +67,5 @@ module.exports = {
   updateProjectObject,
   updateBlogDate,
   updateMultipleDates,
+  updateDate,
 };

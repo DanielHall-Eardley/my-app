@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../pages/dadHacks/components/header/header.css"],
+  "sourcesContent": [".dadHacksHeader {\n  background-color: var(--secondary-clr);\n  color: var(--primary-clr);\n  padding: var(--4sp);\n  display: grid;\n  grid-template-columns: 1fr max-content;\n}\n\n.dadHacksHeader h2 {\n  padding-top: var(--2sp);\n  color: var(--primary-clr);\n  grid-column: 1 / 2;\n}\n"],
+  "mappings": "AAAA,gBACE,sCACA,yBACA,mBACA,aACA,sCAGF,mBACE,uBACA,yBACA",
+  "names": []
+}

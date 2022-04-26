@@ -1,5 +1,5 @@
-<footer class="homeFooter">
-  <nav class="homeSocialLinks">
+<footer class="footer">
+  <nav class="socialLinks">
     <a href="https://github.com/DanielHall-Eardley">Github</a>
   </nav>
   <small class="copyright">&copy; Daniel Hall-Eardley 2022</small>

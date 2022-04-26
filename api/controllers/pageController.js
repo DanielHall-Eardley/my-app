@@ -1,43 +1,12 @@
 const catchAsyncError = require("../../util/catchAsyncError");
 const {
   updateMultipleDates,
-  updateProjectObject,
   updateBlogDate,
+  updateProjectObject,
+  updateDate,
 } = require("../../util/updateDates");
 const { generatePageObject } = require("../../util/generatePageObject");
 const db = require("../db/db");
-
-/* 
-  Create an object with the following structure
-  {
-    [tableName]: [array of rows]
-  }
-*/
-function createDataObject(rawDbResult, tables) {
-  const data = {};
-
-  for (let i = 0; i < tables.length; i += 1) {
-    const tableName = tables[i];
-    const dbRows = rawDbResult[i];
-    data[tableName] = dbRows;
-  }
-
-  return data;
-}
-
-async function getAllData(tables, database = db) {
-  const promises = tables.map((table) => {
-    const query = `
-      SELECT * from ${table}
-    `;
-
-    return database.query(query);
-  });
-
-  const result = await Promise.all(promises);
-  const data = createDataObject(result, tables);
-  return data;
-}
 
 exports.getHomePage = catchAsyncError(async (req, res, next) => {
   const tables = [
@@ -48,14 +17,14 @@ exports.getHomePage = catchAsyncError(async (req, res, next) => {
     "side_project",
   ];
 
-  const content = await getAllData(tables);
+  const content = await db.getAllData(tables);
   content.main_project = updateMultipleDates(
     content.main_project,
     updateProjectObject
   );
   content.blog = updateMultipleDates(content.blog, updateBlogDate);
+  content.breakthru = updateMultipleDates(content.breakthru, updateDate);
   const data = generatePageObject("home", "Home", content);
-  console.log(data);
   res.render("home/home.eta", data);
 });
 

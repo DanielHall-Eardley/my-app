@@ -1,0 +1,13 @@
+.dadHacksHeader {
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  padding: var(--4sp);
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+
+.dadHacksHeader h2 {
+  padding-top: var(--2sp);
+  color: var(--primary-clr);
+  grid-column: 1 / 2;
+}

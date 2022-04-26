@@ -5,22 +5,12 @@
     "../viewAllLink/viewAllLink.eta", 
     { 
       count: it.dadHacks.length,
-      path: "/view/dad-hacks"
+      path: "/view/dadhacks"
     }
   ) }}
   </h2>
-  <ul class="dadHacksList">
-    {{ it.dadHacks.forEach(hack => { }}
-      <li class="ahaMoment">
-        <h3>
-          <span>{{= hack.title }}</span>
-          <span>{{= hack.date }}</span>
-        </h3>
-        <p> {{= hack.category }}
-        <p>
-          {{= hack.content }}
-        </p>
-      </li>
-    {{ }) }}
-  </ul>
+  {{~ includeFile(
+    "../../../dadHacks/components/list/list.eta",
+    { dadHacks: it.dadHacks }
+  ) }}
 </section>
