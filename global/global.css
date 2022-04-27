@@ -136,9 +136,9 @@ main {
 .btnLink,
 a {
   background-color: transparent;
-  color: var(--primary-clr);
+  color: var(--secondary-clr);
   border: none;
-  outline: var(--primary-clr);
+  outline: solid 1px var(--primary-clr);
   font-size: var(--btn-font-size);
   font-weight: var(--heading-light);
   font-family: var(--heading-ft);
