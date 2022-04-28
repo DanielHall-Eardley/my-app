@@ -1,1 +1,10 @@
-<main></main>
+{{ layout("../../layouts/default.eta", it.pageInfo) }}
+
+{{~ includeFile("./components/header/header.eta") }}
+<main>
+  <ul>
+    {{ it.content.sideProjects.forEach(sideProject => { }}
+      {{~ includeFile("./components/sideProject/sideProject.eta", sideProject) }}
+    {{ }) }}
+  </ul>
+</main>

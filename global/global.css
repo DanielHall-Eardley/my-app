@@ -21,6 +21,7 @@ html {
   --secondary-clr: var(--brown);
   --text-background: var(--light-blue);
   --highlight-title: var(--purple);
+  --btn-outline: solid var(--purple) 2px;
 
   /* typography */
   --heading-ft: "Open Sans", sans-serif;
@@ -138,11 +139,17 @@ a {
   background-color: transparent;
   color: var(--secondary-clr);
   border: none;
-  outline: solid 1px var(--primary-clr);
   font-size: var(--btn-font-size);
   font-weight: var(--heading-light);
   font-family: var(--heading-ft);
   text-decoration: none;
+}
+
+.btnLink:focus,
+a:focus,
+button:focus {
+  outline: var(--btn-outline);
+  outline-offset: 3px;
 }
 
 .resumeMain {
@@ -222,4 +229,18 @@ a {
 .ahaMomentTitle,
 .ahaMomentRating {
   padding-bottom: var(--1sp);
+}
+
+.detailPageHeader {
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  padding: var(--4sp);
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+
+.detailPageHeader h2 {
+  padding-top: var(--2sp);
+  color: var(--primary-clr);
+  grid-column: 1 / 2;
 }

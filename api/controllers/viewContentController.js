@@ -69,11 +69,19 @@ exports.getDadHacks = catchAsyncError(async (req, res, next) => {
   const result = await db.getOneTable("dadhack");
   const dadHackObject = { dadHacks: result };
   const data = generatePageObject("dadHacks", "Dad Hacks", dadHackObject);
-  console.log(data);
   res.render("dadHacks/dadHacks.eta", data);
 });
 
-exports.getSideProjects = catchAsyncError((req, res, next) => {});
+exports.getSideProjects = catchAsyncError(async (req, res, next) => {
+  const result = await db.getOneTable("side_project");
+  const sideProjectObject = { sideProjects: result };
+  const data = generatePageObject(
+    "sideHustle",
+    "Side Projects",
+    sideProjectObject
+  );
+  res.render("sideHustle/sideHustle.eta", data);
+});
 
 exports.getResume = catchAsyncError(async (req, res, next) => {
   const query = `

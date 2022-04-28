@@ -1,14 +1,7 @@
-<li class="projectSummaryContainer">
-	<h3 class="projectSummary">
+<li class="sideProjectContainer">
+	<h3 class="sideProjectTitle">
 		<span>{{= it.title }}</span>
-	</h3>
-	<p class="projectSummaryExplanation"> 
-		{{= it.explanation }}
-	</p>
-	<p class="sideProjectTech">
-		{{= it.tech_stack }}
-	</p>
-		<div class="projectSummaryLinks" > 
+		<div class="sideProjectLinks" > 
 			{{ if (it.url) { }} 
 				<a href="{{= it.url}}">Website</a>
 			{{ } }}
@@ -16,4 +9,12 @@
 				<a href="{{= it.github}}">Github</a>
 			{{ } }}
 		</div>
+	</h3>
+	<img src="{{= it.picture }}" alt="Website picture"/>
+	<p class="sideProjectExplanation"> 
+		{{= it.explanation }}
+	</p>
+	<p class="sideProjectTech">
+		{{= it.tech_stack }}
+	</p>
 	</li>
