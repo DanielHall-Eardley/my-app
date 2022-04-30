@@ -246,7 +246,7 @@ module.exports = [
         attributes: {
           id: "employerPhoneNo",
           name: "employerPhoneNo",
-          type: "text",
+          type: "number",
         },
       },
     ],

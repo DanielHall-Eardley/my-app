@@ -90,9 +90,22 @@ exports.getResume = catchAsyncError(async (req, res, next) => {
     ON mp.employer_id = em.id
   `;
 
-  const projects = await db.query(query);
+  const sideProjectQuery = `
+    SELECT * FROM side_project
+  `;
+
+  const projectsPromise = db.query(query);
+  const sideProjectsPromise = db.query(sideProjectQuery);
+  const [projects, sideProjects] = await Promise.all([
+    projectsPromise,
+    sideProjectsPromise,
+  ]);
   const updatedProjects = updateMultipleDates(projects, updateProjectObject);
-  const content = { projects: updatedProjects };
+  const content = {
+    projects: updatedProjects,
+    sideProjects,
+  };
   const data = generatePageObject("resume", "Daniel's Resume", content);
+  console.log(data);
   res.render("resume/resume.eta", data);
 });

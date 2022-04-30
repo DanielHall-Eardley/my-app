@@ -6,6 +6,9 @@
     "./components/experience/experience.eta", 
     { projects: it.content.projects }) 
   }}
+  {{~ includeFile(
+    "./components/sideProject/sideProject.eta", 
+    { sideProjects: it.content.sideProjects }) 
+  }}
   {{~ includeFile("./components/hobbies/hobbies.eta") }}
 </main>
-{{~ includeFile("./components/footer/footer.eta") }}

@@ -15,12 +15,14 @@
             })
           }}
         </ul>
-        <p class="projectEmployer">
-          <span>Employer:</span>
-          <span>{{= project.name }}</span>
-          <span>{{= project.address }}</span>
-          <span>{{= project.phone_number }}</span>
-        </p>
+        <div class="projectResumeLinks" > 
+          {{ if (project.url) { }} 
+            <a href="{{= project.url}}">{{= project.url}} </a>
+          {{ } }}
+          {{ if (project.github) { }} 
+            <a href="{{= project.github}}">| {{= project.github }}</a>
+          {{ } }}
+        </div>
       </div>
     {{ }) }}
   {{ } }}

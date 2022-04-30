@@ -9,11 +9,19 @@ import input_footer from './components/footer/input.js'
 import submit_footer from './components/footer/submit.js' 
 import input_hobbies from './components/hobbies/input.js' 
 import submit_hobbies from './components/hobbies/submit.js' 
+import input_sideProject from './components/sideProject/input.js' 
+import submit_sideProject from './components/sideProject/submit.js' 
 
 const interactions = [
-    input_aboutMe,submit_aboutMe,input_contact,submit_contact,input_experience,submit_experience,input_footer,submit_footer,input_hobbies,submit_hobbies
+    input_aboutMe,submit_aboutMe,input_contact,submit_contact,input_experience,submit_experience,input_footer,submit_footer,input_hobbies,submit_hobbies,input_sideProject,submit_sideProject
   ]
 //<!>
+
+
+
+
+
+
 
 
 

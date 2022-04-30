@@ -107,7 +107,7 @@ exports.postEmployer = catchAsyncError(async (req, res, next) => {
   const customEmployerParams = {
     name: req.body.employerName,
     address: req.body.employerAddress,
-    phone_number: req.body.employerPhoneNo,
+    phone_number: req.body.employerPhoneNo || 0,
   };
 
   const employerData = createDataObject(null, customEmployerParams, employerId);
@@ -132,7 +132,7 @@ exports.postMainProject = catchAsyncError(async (req, res, next) => {
     projectId
   );
 
-  await insertOneRow(projectData, "main_project");
+  const result = await insertOneRow(projectData, "main_project");
   const redirectPath = `/view/project/${projectId}`;
   redirectOnSuccess(result, redirectPath, res);
 });

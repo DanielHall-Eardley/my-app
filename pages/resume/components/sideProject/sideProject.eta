@@ -1,0 +1,27 @@
+<section class="sideProjectResumeContainer">
+  <h3>Side Projects</h3>
+  <ul class="sideProjectResumeList">
+    {{ it.sideProjects.forEach(project => { }}
+      <li class="sideProjectResume">
+        <h4 class="sideProjectResumeTitle">
+          <span>{{= project.title }}</span>
+        </h4>
+        <p class="sideProjectResumeExplanation"> 
+          {{= project.explanation }}
+        </p>
+        <p class="sideProjectResumeTech">
+          Tech Stack: {{= project.tech_stack }}
+        </p>
+        <div class="sideProjectResumeLinks" > 
+          {{ if (project.url) { }} 
+            <a href="{{= project.url}}">{{= project.url}} </a>
+          {{ } }}
+          {{ if (project.github) { }} 
+            <a href="{{= project.github}}">| {{= project.github }}</a>
+          {{ } }}
+        </div>
+      </li>
+    {{ }) }}
+  </ul>
+</section>
+

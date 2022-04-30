@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../../../pages/sideHustle/components/header/input.js", "../../../pages/sideHustle/components/header/submit.js", "../../../pages/sideHustle/components/sideProject/input.js", "../../../pages/sideHustle/components/sideProject/submit.js", "../../../pages/sideHustle/sideHustle.js"],
-  "sourcesContent": ["\n\nmodule.exports = {};", "\n\nmodule.exports = {};", "\n\nmodule.exports = {};", "\n\nmodule.exports = {};", "//<!>\nimport input_header from './components/header/input.js' \nimport submit_header from './components/header/submit.js' \nimport input_sideProject from './components/sideProject/input.js' \nimport submit_sideProject from './components/sideProject/submit.js' \n\nconst interactions = [\n    input_header,submit_header,input_sideProject,submit_sideProject\n  ]\n//<!>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nundefined"],
+  "sourcesContent": ["\n\nmodule.exports = {};", "\n\nmodule.exports = {};", "\n\nmodule.exports = {};", "\n\nmodule.exports = {};", "//<!>\nimport input_header from './components/header/input.js' \nimport submit_header from './components/header/submit.js' \nimport input_sideProject from './components/sideProject/input.js' \nimport submit_sideProject from './components/sideProject/submit.js' \n\nconst interactions = [\n    input_header,submit_header,input_sideProject,submit_sideProject\n  ]\n//<!>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nundefined"],
   "mappings": "wlBAAA,gBAEA,EAAO,QAAU,KCFjB,gBAEA,EAAO,QAAU,KCFjB,gBAEA,EAAO,QAAU,KCFjB,gBAEA,EAAO,QAAU,KCDjB,MAAyB,OACzB,EAA0B,OAC1B,EAA8B,OAC9B,EAA+B",
   "names": []
 }

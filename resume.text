@@ -8,18 +8,16 @@
           It is built using React, Node, Express and Mongodb with a REST API.
         </p>
         <ul>
-          <li>
-            Built the front and back end for a movie information page,
-            including Facebook style comments and reviews.
-          </li>
-          <li>
-            Integrated with the Google location API and built automatic geolocation and
-            address autocompletion using a proxy server to protect API keys.
-          </li>
-          <li>
-            Decreased the load time of a REST API endpoint that was responsible for
-            finding users within a specified location radius.
-          </li>
+          
+Built the front and back end for a movie information page,
+including Facebook style comments and reviews.
+<!>
+Integrated with the Google location API and built automatic geolocation and
+address autocompletion using a proxy server to protect API keys.
+<!>
+Decreased the load time of a REST API endpoint that was responsible for
+finding users within a specified location radius.
+      
         </ul>
       </div>
       <div class="company">

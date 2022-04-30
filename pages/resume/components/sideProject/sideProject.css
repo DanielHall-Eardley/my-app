@@ -1,0 +1,15 @@
+.sideProjectResumeContainer {
+  padding-top: var(--4sp);
+}
+
+.sideProjectResumeList {
+  padding-left: var(--3sp);
+}
+
+.sideProjectResume {
+  padding-top: var(--2sp);
+}
+
+.sideProjectResumeTitle {
+  padding-bottom: 4px;
+}
