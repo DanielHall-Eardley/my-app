@@ -5,13 +5,9 @@
       <span class="employerFieldName">Name: </span>
       {{= it.name }}
     </li>
-    <li class="employerName">
+    <li class="employerLocation">
       <span class="employerFieldName">Address: </span>
       {{= it.address }}
-    </li>
-    <li class="employerName">
-      <span class="employerFieldName">Phone:  </span>
-      {{= it.phone_number }}
     </li>
   </ul>
 </aside>

@@ -1,6 +1,7 @@
 const db = require("../db/db");
 const mdOptions = {
   linkify: true,
+  breaks: true,
 };
 const md = require("markdown-it")(mdOptions);
 const catchAsyncError = require("../../util/catchAsyncError");

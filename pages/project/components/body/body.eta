@@ -2,9 +2,11 @@
   <p class="projectSummary">
     {{= it.explanation }}
   </p>
+  <h3>Stack</h3>
   <p class="projectTech">
-    Stack: {{= it.tech_stack }}
+    {{= it.tech_stack }}
   </p>
+  <h3>Highlights</h3>
   {{~ includeFile(
     "../checkArray/checkArray.eta",
     {
@@ -16,5 +18,9 @@
       "../employer/employer.eta",
       it 
     )
+  }}
+  {{~ includeFile(
+    "../footer/footer.eta", 
+    it) 
   }}
 </section>

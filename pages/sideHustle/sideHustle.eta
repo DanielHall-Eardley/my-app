@@ -1,7 +1,7 @@
 {{ layout("../../layouts/default.eta", it.pageInfo) }}
 
 {{~ includeFile("./components/header/header.eta") }}
-<main>
+<main class="contentPadding">
   <ul>
     {{ it.content.sideProjects.forEach(sideProject => { }}
       {{~ includeFile("./components/sideProject/sideProject.eta", sideProject) }}

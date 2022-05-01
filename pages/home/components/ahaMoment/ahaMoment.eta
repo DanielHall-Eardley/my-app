@@ -9,8 +9,14 @@
     }
   ) }}
   </h2>
-    {{~ includeFile(
-      "../../../ahaMoments/components/list/list.eta",
-      { ahaMoments: it.ahaMoments }
-    ) }}
+    <ul>
+    {{ it.ahaMoments.forEach(moment => { }}
+      <li class="ahaMomentContainer">
+        <h3 class="ahaMomentTitle">{{= moment.title }}</h3>
+        <p>
+          {{= moment.content }}
+        </p>
+      </li>
+    {{ }) }}
+    </ul>
   </section>

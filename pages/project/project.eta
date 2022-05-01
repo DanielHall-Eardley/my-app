@@ -9,9 +9,4 @@
     "./components/body/body.eta", 
     it.content) 
   }}
-  {{~ includeFile(
-    "./components/footer/footer.eta", 
-    it.content) 
-  }}
-  
 </main>

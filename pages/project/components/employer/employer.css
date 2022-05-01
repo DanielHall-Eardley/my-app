@@ -1,3 +1,8 @@
+.employerContainer {
+  padding-top: var(--2sp);
+}
+
 .employerList {
-  padding: var(--1sp) var(--3sp);
+  padding-top: var(--1sp);
+  padding-left: var(--3sp);
 }

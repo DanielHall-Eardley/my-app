@@ -10,11 +10,15 @@
 			{{ } }}
 		</div>
 	</h3>
-	<img src="{{= it.picture }}" alt="Website picture"/>
-	<p class="sideProjectExplanation"> 
-		{{= it.explanation }}
-	</p>
-	<p class="sideProjectTech">
-		{{= it.tech_stack }}
-	</p>
+  <div class="sideProjectInfo">
+    <img src="{{= it.picture }}" alt="Website picture" class="sideProjectPicture"/>
+    <div>
+      <p class="sideProjectExplanation"> 
+        {{= it.explanation }}
+      </p>
+      <p class="sideProjectTech">
+        Tech: {{= it.tech_stack }}
+      </p>
+    </div>
+  </div>
 	</li>

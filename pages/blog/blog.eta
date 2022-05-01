@@ -1,5 +1,5 @@
 {{ layout("../../layouts/default.eta", it.pageInfo) }}
 {{~ includeFile("./components/header/header.eta", it.content) }}
-<main>
+<main class="blogBody">
   {{~ it.content.blog }}
 </main>

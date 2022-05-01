@@ -4,10 +4,11 @@
     <span>Date: {{= it.date }}</span>
   </h3>
   <p class="ahaMomentRating">
-    Rating: 
+    Mind Blown Rating: 
     {{ for (let i = 0; i <= it.mind_blown_rating; i += 1) { }}
-      <span >&#128293;</span>
+      <span>&#128161;</span> 
     {{ } }}
+    / 5
   </p>
   <p>
     {{= it.content }}

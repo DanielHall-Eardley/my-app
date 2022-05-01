@@ -115,7 +115,7 @@ textarea {
 }
 
 main {
-  min-height: calc(100vh - var(--footer-height));
+  padding-bottom: calc(var(--footer-height) + var(--4sp));
 }
 
 .cardContainer {
@@ -130,7 +130,9 @@ main {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 50vh;
-  padding: var(--4sp);
+  padding-left: var(--4sp);
+  padding-right: var(--4sp);
+  padding-top: var(--4sp);
   gap: var(--3sp);
 }
 
@@ -166,6 +168,11 @@ button:focus {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: auto;
   background-color: var(--primary-clr);
   color: var(--secondary-clr);
   height: var(--footer-height);
@@ -244,4 +251,10 @@ button:focus {
   padding-top: var(--2sp);
   color: var(--primary-clr);
   grid-column: 1 / 2;
+}
+
+.blogBody {
+  padding-top: var(--4sp);
+  padding-left: 20vw;
+  padding-right: 20vw;
 }

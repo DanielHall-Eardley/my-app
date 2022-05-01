@@ -1,6 +1,11 @@
 <footer class="projectFooter">
+  <h3>Links</h3>
   <nav class="projectLinks">
-    <a href="{{= it.url }}">Website</a>
-    <a href="{{= it.github }}">Github</a>
+    {{ if (it.url) { }}
+      <a href="{{= it.url }}">{{= it.url }}</a>
+    {{ } }}
+    {{ if (it.github) { }}
+      <a href="{{= it.github }}">Github Repo</a>
+    {{ } }}
   </nav>
 </footer>
