@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const { generatePageObject } = require("../util/generatePageObject");
 const eta = require("eta");
-const dotenv = require("dotenv");
-dotenv.config();
+// const dotenv = require("dotenv");
+// dotenv.config();
 
 const pageRoutes = require("./routes/page");
 const addContentRoutes = require("./routes/addContent");
