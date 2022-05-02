@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
-const path = require("path");
 const { generatePageObject } = require("../util/generatePageObject");
 const eta = require("eta");
-const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -44,7 +42,6 @@ eta.configure({
 app.engine("eta", eta.renderFile);
 app.set("view engine", "eta");
 app.set("views", "../pages");
-app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
