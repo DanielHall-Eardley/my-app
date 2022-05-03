@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const { generatePageObject } = require("../util/generatePageObject");
 const eta = require("eta");
 // const dotenv = require("dotenv");
@@ -41,7 +42,8 @@ eta.configure({
 
 app.engine("eta", eta.renderFile);
 app.set("view engine", "eta");
-app.set("views", "../pages");
+const pagesPath = path.resolve("pages");
+app.set("views", pagesPath);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -50,8 +52,8 @@ app.use("/content", addContentRoutes);
 app.use("/view", viewContentRoutes);
 app.use("/download", downloadRoutes);
 app.use("/auth", authRoutes);
-const buildFiles = "../build";
-app.use(express.static(buildFiles));
+const buildFilesPath = path.resolve("build");
+app.use(express.static(buildFilesPath));
 
 app.use((error, req, res, next) => {
   console.log(error);
