@@ -46,6 +46,9 @@ html {
 
   /* other */
   --footer-height: 8rem;
+
+  /* breakpoints */
+  --large-breakpoint: 900px;
 }
 
 h1,
@@ -79,7 +82,6 @@ body {
   font-weight: var(--body-regular);
   font-size: 1.7rem;
   letter-spacing: 1.2px;
-  line-height: 140%;
 }
 
 label {
@@ -103,6 +105,10 @@ button {
   border-radius: var(--rad-sm);
   font-size: var(--btn-font-size);
   border: none;
+}
+
+p {
+  line-height: 1.4;
 }
 
 ul {
@@ -136,6 +142,20 @@ main {
   gap: var(--3sp);
 }
 
+@media only screen and (max-width: 900px) {
+  .homeGrid {
+    display: block;
+  }
+
+  .cardContainer:not(:last-child) {
+    margin-bottom: var(--3sp);
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
 .btnLink,
 a {
   background-color: transparent;
@@ -157,6 +177,7 @@ button:focus {
 .resumeMain {
   padding-left: var(--4sp);
   padding-right: var(--4sp);
+  padding-bottom: 0;
   min-height: auto;
 }
 
@@ -197,6 +218,16 @@ button:focus {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    align-items: center;
+  }
+
+  .socialLinks {
+    border-right: none;
+  }
 }
 
 .textHighlight {
@@ -257,4 +288,10 @@ button:focus {
   padding-top: var(--4sp);
   padding-left: 20vw;
   padding-right: 20vw;
+}
+
+.projectHighlightList {
+  list-style-type: disc;
+  padding-left: var(--4sp);
+  padding-top: var(--1sp);
 }

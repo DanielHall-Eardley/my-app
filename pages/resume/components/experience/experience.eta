@@ -6,15 +6,13 @@
         <h4>{{= project.title }}</h4>
         <p>{{= project.start }} - {{= project.end }}</p>
         <p class="projectExplanation">{{= project.explanation }}</p>
-        <ul class="projectAccomplishments">
-          {{~ includeFile(
-            "../../../project/components/checkArray/checkArray.eta",
-            {
-              array: project.accomplishments,
-              component: "../../../project/components/accomplishments/accomplishments.eta"
-            })
-          }}
-        </ul>
+        {{~ includeFile(
+          "../../../project/components/checkArray/checkArray.eta",
+          {
+            array: project.accomplishments,
+            component: "../../../project/components/accomplishments/accomplishments.eta"
+          })
+        }}
         <div class="projectResumeLinks" > 
           {{ if (project.url) { }} 
             <a href="{{= project.url}}">{{= project.url}} </a>

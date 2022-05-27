@@ -1,25 +1,25 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const { generatePageObject } = require("../util/generatePageObject");
+const { generatePageObject } = require("./util/generatePageObject");
 const eta = require("eta");
-// const dotenv = require("dotenv");
-// dotenv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 
-const pageRoutes = require("./routes/page");
-const addContentRoutes = require("./routes/addContent");
-const viewContentRoutes = require("./routes/viewContent");
-const downloadRoutes = require("./routes/download");
-const authRoutes = require("./routes/authRoutes");
+const pageRoutes = require("./api/routes/page");
+const addContentRoutes = require("./api/routes/addContent");
+const viewContentRoutes = require("./api/routes/viewContent");
+const downloadRoutes = require("./api/routes/download");
+const authRoutes = require("./api/routes/authRoutes");
 
-const blogModel = require("./models/blog");
-const breakthruModel = require("./models/breakthru");
-const dadHackModel = require("./models/dadHack");
-const employerModel = require("./models/employer");
-const mainProjectModel = require("./models/mainProject");
-const sideProjectModel = require("./models/sideProject");
+const blogModel = require("./api/models/blog");
+const breakthruModel = require("./api/models/breakthru");
+const dadHackModel = require("./api/models/dadHack");
+const employerModel = require("./api/models/employer");
+const mainProjectModel = require("./api/models/mainProject");
+const sideProjectModel = require("./api/models/sideProject");
 
-const db = require("./db/db");
+const db = require("./api/db/db");
 const tableArray = [
   blogModel,
   breakthruModel,
@@ -42,7 +42,7 @@ eta.configure({
 
 app.engine("eta", eta.renderFile);
 app.set("view engine", "eta");
-const pagesPath = path.resolve("pages");
+const pagesPath = path.resolve(__dirname, "pages");
 app.set("views", pagesPath);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -52,7 +52,7 @@ app.use("/content", addContentRoutes);
 app.use("/view", viewContentRoutes);
 app.use("/download", downloadRoutes);
 app.use("/auth", authRoutes);
-const buildFilesPath = path.resolve("build");
+const buildFilesPath = path.resolve(__dirname, "build");
 app.use(express.static(buildFilesPath));
 
 app.use((error, req, res, next) => {

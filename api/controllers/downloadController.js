@@ -10,8 +10,8 @@ async function getResumePage(browser, baseUrl = host) {
 
 async function formatResume(page) {
   const modifiedStyles = `
-    .aboutMe { padding-right: 0 }
-    .resumeNav, .resumeFooter { display: none }
+    .aboutMe { padding-right: 0 };
+    .footer { display: none };
   `;
 
   await page.addStyleTag({ content: modifiedStyles });

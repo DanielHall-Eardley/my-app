@@ -1,4 +1,4 @@
-<ul class="projectHighlights">
+<ul class="projectHighlightList">
   {{ it.array.forEach(accomplishment => { }}
     <li class="projectHighlight">
       {{= accomplishment }}

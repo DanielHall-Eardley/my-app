@@ -8,6 +8,7 @@
 .addContentHeaderContentNav {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   height: 100%;
   padding-left: var(--4sp);
 }
@@ -27,4 +28,15 @@
   color: var(--secondary-clr);
   padding: var(--1sp) var(--2sp);
   border-radius: var(--rad-sm);
+}
+
+@media only screen and (max-width: 900px) {
+  .addContentHeaderContainer {
+    display: block;
+  }
+
+  .addContentHeaderContentNav li {
+    flex: 1;
+    padding-bottom: var(--2sp);
+  }
 }

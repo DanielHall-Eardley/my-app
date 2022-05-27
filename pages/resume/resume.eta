@@ -1,4 +1,4 @@
-{{ layout("../../layouts/default.eta", it.pageInfo) }}
+{{ layout("../../layouts/resume.eta", it.pageInfo) }}
 {{~ includeFile("./components/contact/contact.eta") }}
 <main class="resumeMain">
   {{~ includeFile("./components/aboutMe/aboutMe.eta") }}

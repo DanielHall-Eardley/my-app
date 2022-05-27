@@ -15,7 +15,7 @@
 }
 
 .resumeContact a {
-  padding-right: var(--3sp);
+  margin-right: var(--3sp);
 }
 
 .resumeNav {
@@ -24,5 +24,25 @@
 }
 
 .resumeNav a {
-  padding-left: var(--3sp);
+  margin-left: var(--3sp);
+}
+
+@media only screen and (max-width: 900px) {
+  .resumeHeader {
+    display: block;
+  }
+
+  .resumeNav a {
+    margin-left: 0;
+    display: block;
+  }
+
+  .resumeNav a:first-of-type {
+    margin-bottom: var(--2sp);
+  }
+
+  .resumeContact a {
+    margin-bottom: var(--2sp);
+    display: block;
+  }
 }

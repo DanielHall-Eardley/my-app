@@ -4,4 +4,5 @@
 
 .inputContainer {
   padding-bottom: var(--2sp);
+  width: 100%;
 }

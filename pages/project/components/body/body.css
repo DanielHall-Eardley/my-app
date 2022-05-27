@@ -12,3 +12,10 @@
   padding-bottom: var(--2sp);
   padding-top: var(--1sp);
 }
+
+@media only screen and (max-width: 900px) {
+  .projectBody {
+    padding-left: var(--3sp);
+    padding-right: var(--3sp);
+  }
+}

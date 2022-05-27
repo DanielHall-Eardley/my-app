@@ -9,3 +9,10 @@
 .projectDuration {
   padding: var(--3sp);
 }
+
+@media only screen and (max-width: 900px) {
+  .projectTitle,
+  .projectTitle > * {
+    display: block;
+  }
+}

@@ -6,9 +6,24 @@
 }
 
 .headerContainer a {
-  padding-left: var(--3sp);
+  margin-left: var(--3sp);
 }
 
 .headerName {
   flex: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .headerContainer {
+    display: block;
+  }
+
+  .headerName {
+    padding-bottom: var(--3sp);
+  }
+
+  .headerContainer a {
+    margin-left: 0;
+    margin-right: var(--3sp);
+  }
 }

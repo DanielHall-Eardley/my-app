@@ -39,6 +39,7 @@ async function insertOneRow(dataObj, tableName, database = db) {
 }
 
 function redirectOnSuccess(queryResult, redirectPath, response) {
+  console.log({ queryResult });
   if (queryResult?.changes > 0) {
     return response.redirect(redirectPath);
   }
