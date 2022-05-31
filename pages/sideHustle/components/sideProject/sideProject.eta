@@ -11,7 +11,9 @@
 		</div>
 	</h3>
   <div class="sideProjectInfo">
-    <img src="{{= it.picture }}" alt="Website picture" class="sideProjectPicture"/>
+		{{ if (it.picture) { }}
+    	<img src="{{= it.picture }}" alt="Website picture" class="sideProjectPicture"/>
+		{{ } }}
     <div>
       <p class="sideProjectExplanation"> 
         {{= it.explanation }}

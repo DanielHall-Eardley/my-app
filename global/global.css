@@ -244,6 +244,13 @@ button:focus {
   padding-top: var(--2sp);
 }
 
+@media only screen and (max-width: 900px) {
+  .contentPadding {
+    padding-left: var(--2sp);
+    padding-right: var(--2sp);
+  }
+}
+
 .dadHack {
   padding-bottom: var(--3sp);
 }
@@ -263,6 +270,12 @@ button:focus {
 .ahaMomentTitle {
   display: flex;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .ahaMomentTitle {
+    flex-direction: column;
+  }
 }
 
 .ahaMomentTitle,

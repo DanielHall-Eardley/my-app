@@ -1,3 +1,7 @@
+.sideProjectContainer {
+  padding-bottom: var(--4sp);
+}
+
 .sideProjectTitle {
   display: flex;
   justify-content: space-between;
@@ -13,4 +17,19 @@
   height: 14rem;
   object-fit: cover;
   padding-right: var(--2sp);
+}
+
+.sideProjectTech {
+  padding-top: var(--1sp);
+}
+
+@media only screen and (max-width: 900px) {
+  .sideProjectInfo {
+    display: block;
+  }
+
+  .sideProjectPicture {
+    padding-right: 0;
+    padding-bottom: var(--2sp);
+  }
 }
