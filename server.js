@@ -47,6 +47,13 @@ app.set("views", pagesPath);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+  res.set({
+    "Cache-Control": "max-age=3600",
+  });
+
+  next();
+});
 app.use(pageRoutes);
 app.use("/content", addContentRoutes);
 app.use("/view", viewContentRoutes);
