@@ -3,8 +3,8 @@ const app = express();
 const path = require("path");
 const { generatePageObject } = require("./util/generatePageObject");
 const eta = require("eta");
-const dotenv = require("dotenv");
-dotenv.config();
+// const dotenv = require("dotenv");
+// dotenv.config();
 
 const pageRoutes = require("./api/routes/page");
 const addContentRoutes = require("./api/routes/addContent");
