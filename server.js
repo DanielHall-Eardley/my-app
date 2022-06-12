@@ -49,7 +49,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   res.set({
-    "Cache-Control": "max-age=3600",
+    "Cache-Control": "max-age=3600, stale-while-revalidate=21600",
   });
 
   next();
